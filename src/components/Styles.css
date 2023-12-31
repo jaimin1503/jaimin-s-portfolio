@@ -1,26 +1,55 @@
 @font-face {
-    font-family: 'Poiret One';
-    src: url('./assets/Poiret_One/PoiretOne-Regular.ttf') format('truetype');
+  font-family: "Poiret One";
+  src: url("./assets/Poiret_One/PoiretOne-Regular.ttf") format("truetype");
 }
 .font-poiret {
-    font-family: 'Poiret One', sans-serif; /* Fallback font */
-    /* You can adjust other font properties here */
+  font-family: "Poiret One", sans-serif; /* Fallback font */
+  /* You can adjust other font properties here */
 }
 .cool-link {
-    display: inline-block;
-    text-decoration: none;
+  color: #9ec8b9;
+  display: inline-block;
+  text-decoration: none;
 }
 
 .cool-link::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 1px;
-    background: #9EC8B9;
-    transition: width .3s;
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background: #9ec8b9;
+  transition: width 0.3s;
 }
 
 .cool-link:hover::after {
-    width: 100%;
-    transition: width .3s;
+  width: 100%;
+  transition: width 0.3s;
+}
+.welcome-circle {
+  animation: welcome-circle 1s infinite;
+}
+@-webkit-keyframes welcome-circle {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}
+@keyframes welcome-circle {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(99, 200, 178, 0.4);
+    box-shadow: 0 0 0 0 rgba(87, 171, 146, 0.4);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 20px rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 20px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
 }
