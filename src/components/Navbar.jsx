@@ -13,6 +13,9 @@ const Navbar = () => {
               ABOUT ME
             </li>
             <li className={`items text-lg my-4 mx-8 cursor-pointer cool-link`}>
+              SKILLS
+            </li>
+            <li className={`items text-lg my-4 mx-8 cursor-pointer cool-link`}>
               CONTACT
             </li>
           </ul>

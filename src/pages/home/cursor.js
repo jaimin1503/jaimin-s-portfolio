@@ -3,27 +3,27 @@ window.addEventListener("load", (event) => {
     mouseX = 0;
   var yp = 0,
     mouseY = 0;
+  var intervalId; // Variable to store the interval ID
 
   const cursorFollower = document.querySelector(".cursorFollower");
+  // const homePage = document.querySelector(".home-page");
 
-  document.addEventListener("mousemove", (e) => {
+  function updateCursorPosition(e) {
     mouseX = e.pageX;
     mouseY = e.pageY;
-  });
-  setInterval(function () {
+  }
+
+  function updateCursor() {
     xp += (mouseX - xp) / 15;
     yp += (mouseY - yp) / 15;
 
     if (cursorFollower) {
-      // Check if cursorFollower exists
       cursorFollower.style.left = xp + "px";
       cursorFollower.style.top = yp + "px";
     }
-  }, 20);
-  document
-    .querySelector(".developer-img")
-    .addEventListener("mouseenter", function () {
-      cursorFollower.style.transform = "translate(-50px, -50px) scale(0)";
-      alert("entered");
-    });
+  }
+
+  document.addEventListener("mousemove", updateCursorPosition);
+
+  intervalId = setInterval(updateCursor, 20);
 });

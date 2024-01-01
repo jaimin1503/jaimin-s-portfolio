@@ -1,12 +1,11 @@
 import Navbar from "../../components/Navbar";
 import Welcome from "../../components/homepage/Welcome";
 import "../../components/Styles.css";
-import "./cursor.js";
 import developer from "../assets/developer.png";
 
 const HomePage = () => {
   return (
-    <div className=" bg-[#092635]">
+    <div className="home-page bg-[#092635]">
       <Navbar />
       <div className=" flex justify-center flex-col items-center lg:flex-row">
         <div className="developer ml-10 pointer-events-none">
@@ -34,10 +33,10 @@ const HomePage = () => {
         </h1>
         <h1 className="py-5 lg:py-10">"Innovate, Develop, Deliver"</h1>
       </div>
-      <span
+      {/* <span
         id="cursorFollower"
         className="cursorFollower bg-green-200 md:h-[10rem] md:w-[10rem] h-[7rem] w-[7rem] "
-      ></span>
+      ></span> */}
     </div>
   );
 };
