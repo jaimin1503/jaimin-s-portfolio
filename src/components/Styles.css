@@ -67,6 +67,7 @@
   text-shadow: 0px 0px 50px #9ec8b9;
 }
 
-.developer-img:hover + .cursor-circle {
-  display: none;
+.developer-img {
+  position: relative;
+  z-index: 10;
 }
