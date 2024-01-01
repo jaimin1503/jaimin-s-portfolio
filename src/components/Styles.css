@@ -58,9 +58,15 @@
   position: fixed;
   border: 2px solid black;
   border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: transform 0.2s;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.1s;
   mix-blend-mode: difference;
-  z-index: 999;
   pointer-events: none;
+}
+.text-shadow {
+  text-shadow: 0px 0px 50px #9ec8b9;
+}
+
+.developer-img:hover + .cursor-circle {
+  display: none;
 }

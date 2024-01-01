@@ -3,10 +3,6 @@ window.addEventListener("load", (event) => {
     mouseX = 0;
   var yp = 0,
     mouseY = 0;
-  var xpDot = 0,
-    mouseXDot = 0; // Changed variable name to mouseXDot
-  var ypDot = 0,
-    mouseYDot = 0; // Changed variable name to mouseYDot
 
   const cursorFollower = document.querySelector(".cursorFollower");
 
@@ -14,7 +10,6 @@ window.addEventListener("load", (event) => {
     mouseX = e.pageX;
     mouseY = e.pageY;
   });
-
   setInterval(function () {
     xp += (mouseX - xp) / 15;
     yp += (mouseY - yp) / 15;
@@ -25,4 +20,10 @@ window.addEventListener("load", (event) => {
       cursorFollower.style.top = yp + "px";
     }
   }, 20);
+  document
+    .querySelector(".developer-img")
+    .addEventListener("mouseenter", function () {
+      cursorFollower.style.transform = "translate(-50px, -50px) scale(0)";
+      alert("entered");
+    });
 });
