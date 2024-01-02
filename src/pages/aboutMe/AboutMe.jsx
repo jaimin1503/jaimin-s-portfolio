@@ -5,16 +5,26 @@ import { Link } from "react-router-dom";
 import github from "./assets/github.svg";
 import linkedin from "./assets/linkedin.svg";
 import email from "./assets/email.svg";
+import { motion } from "framer-motion";
+import useCustomCursor from "../../components/useCustomCursor";
+
 const AboutMe = () => {
+  const { cursorVariant, variants, textEnter, textLeave } = useCustomCursor();
+
   return (
-    <div className=" bg-[#9EC8B9] h-screen w-screen">
+    <div className=" bg-[#9EC8B9]">
+      <motion.div
+        className="cursor"
+        variants={variants}
+        animate={cursorVariant}
+      />
       <div className=" flex flex-col">
         <div className="about-me py-10 flex justify-center ">
           <div className="info-text p-10 flex flex-col items-start">
-            <h2 className=" text-4xl font-poiret py-5 text-[#092635] font-extrabold">
+            <h2 className=" text-4xl font-mono py-5 text-[#092635] font-bold">
               Hello, I am Jaimin Viramgama
             </h2>
-            <h2 className=" text-4xl font-poiret py-5 text-[#092635] font-extrabold">
+            <h2 className=" text-4xl font-mono py-5 text-[#092635] font-medium">
               I do Front-end development.
             </h2>
             <p className=" text-2xl font-poiret max-w-xl text-[#092635]">
@@ -31,12 +41,24 @@ const AboutMe = () => {
             </p>
             <div className=" flex flex-col mt-10">
               <div className=" links flex font-poiret my-5 font-extrabold">
-                <button className=" py-2 px-5">Schedule a meet</button>
-                <button className=" py-2 px-5">Resume {"->"}</button>
+                <button
+                  onMouseEnter={textEnter}
+                  onMouseLeave={textLeave}
+                  className=" py-2 px-5 bg-[#092635] rounded-xl text-white"
+                >
+                  Schedule a meet
+                </button>
+                <button className=" py-2 px-5 text-lg font-extrabold resume-link">
+                  Resume&#8594;
+                </button>
               </div>
 
               <div className="social-links w-fit p-3 rounded-2xl">
-                <div className="flex relative opacity-100">
+                <div
+                  onMouseEnter={textEnter}
+                  onMouseLeave={textLeave}
+                  className="flex relative opacity-100"
+                >
                   <Link to="https://www.linkedin.com/in/jaimin-viramgama-487485233/">
                     <div className=" p-2 bg-white rounded-2xl mx-2 shadow-xl social-logos">
                       <img src={linkedin} alt="linkedin" />

@@ -73,3 +73,6 @@
 .social-logos:hover {
   transform: translateY(-10px) scale(1.2);
 }
+.resume-link:hover {
+  color: rgb(20, 20, 207);
+}
