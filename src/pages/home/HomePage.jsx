@@ -40,7 +40,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className="headline  lg:text-5xl sm:text-5xl text-4xl text-wrap text-[#F8FAE5] font-poiret font-extrabold text-center py-10">
+      <div className="headline  lg:text-5xl sm:text-4xl text-3xl text-wrap text-[#F8FAE5] font-poiret font-extrabold text-center py-10">
         <h1
           onMouseEnter={textEnter}
           onMouseLeave={textLeave}

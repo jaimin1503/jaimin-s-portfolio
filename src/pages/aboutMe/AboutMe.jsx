@@ -19,15 +19,15 @@ const AboutMe = () => {
         animate={cursorVariant}
       />
       <div className=" flex flex-col">
-        <div className="about-me py-10 flex justify-center ">
+        <div className="about-me py-10 flex-col-reverse flex items-center lg:flex-row lg:justify-center">
           <div className="info-text p-10 flex flex-col items-start">
-            <h2 className=" text-4xl font-mono py-5 text-[#092635] font-bold">
+            <h2 className=" sm:text-4xl text-3xl font-mono py-5 text-[#092635] font-bold">
               Hello, I am Jaimin Viramgama
             </h2>
-            <h2 className=" text-4xl font-mono py-5 text-[#092635] font-medium">
+            <h2 className=" sm:text-4xl text-3xl font-mono py-5 text-[#092635] font-medium">
               I do Front-end development.
             </h2>
-            <p className=" text-2xl font-poiret max-w-xl text-[#092635]">
+            <p className=" lg:text-2xl text-xl font-poiret max-w-xl text-[#092635]">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
               ipsum consequatur saepe omnis illum nostrum. In architecto, eos
               adipisci ducimus id natus delectus nisi fuga qui consectetur
@@ -57,7 +57,7 @@ const AboutMe = () => {
                 <div
                   onMouseEnter={textEnter}
                   onMouseLeave={textLeave}
-                  className="flex relative opacity-100"
+                  className="flex relative"
                 >
                   <Link to="https://www.linkedin.com/in/jaimin-viramgama-487485233/">
                     <div className=" p-2 bg-white rounded-2xl mx-2 shadow-xl social-logos">
@@ -84,7 +84,11 @@ const AboutMe = () => {
             </div>
           </div>
           <div className="my-image">
-            <img className="w-[30vw] object-center" src={jaimin} alt="jaimin" />
+            <img
+              className="w-[50vw] sm:w-[40vw] md:w-[30vw] object-center lg:mb-40"
+              src={jaimin}
+              alt="jaimin"
+            />
           </div>
         </div>
       </div>
