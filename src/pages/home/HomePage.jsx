@@ -57,10 +57,6 @@ const HomePage = () => {
           "Innovate, Develop, Deliver"
         </h1>
       </div>
-      {/* <span
-        id="cursorFollower"
-        className="cursorFollower bg-green-200 md:h-[10rem] md:w-[10rem] h-[7rem] w-[7rem] "
-      ></span> */}
     </div>
   );
 };

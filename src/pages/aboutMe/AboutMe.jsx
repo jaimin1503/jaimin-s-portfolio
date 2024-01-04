@@ -48,12 +48,16 @@ const AboutMe = () => {
                 >
                   Schedule a meet
                 </button>
-                <button className=" py-2 px-5 text-lg font-extrabold resume-link">
+                <button
+                  onMouseEnter={textEnter}
+                  onMouseLeave={textLeave}
+                  className=" py-2 px-5 text-lg font-extrabold resume-link"
+                >
                   Resume&#8594;
                 </button>
               </div>
 
-              <div className="social-links w-fit p-3 rounded-2xl">
+              <div className="social-links w-fit mt-5 p-3 rounded-2xl">
                 <div
                   onMouseEnter={textEnter}
                   onMouseLeave={textLeave}
