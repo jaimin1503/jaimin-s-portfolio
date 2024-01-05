@@ -16,10 +16,10 @@ const Navbar = () => {
       />
       <nav>
         <div className="nav_items">
-          <div className=" flex md:justify-center right-0 pr-10 absolute md:relative ">
+          <div className=" flex md:justify-center right-0 z-40 absolute md:relative ">
             <motion.ul
-              className={`flex flex-col md:flex-row font-poiret relative ${
-                !isOpen ? "hidden" : "visible"
+              className={`md:flex-row pr-10 font-poiret relative ${
+                isOpen ? "v-resp" : "shows"
               } visible`}
             >
               <motion.li className="items text-lg my-4 mx-8 cursor-pointer cool-link">
@@ -37,7 +37,7 @@ const Navbar = () => {
             </motion.ul>
           </div>
         </div>
-        <div className="menu-button right-3 top-0 py-2 absolute md:hidden ">
+        <div className="menu-button right-3 top-0 py-2 absolute md:hidden z-50 ">
           <svg
             onClick={() => setIsOpen(!isOpen)}
             style={{ cursor: "pointer" }}

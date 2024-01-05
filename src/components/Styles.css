@@ -12,9 +12,17 @@
   text-decoration: none;
 }
 
-@media(max-width:768px){
-  .v-resp{
-    visibility: hidden;
+@media (max-width: 768px) {
+  .v-resp {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    border-radius: 0 0 0 20%;
+  }
+  .shows {
+    display: flex;
+    display: none;
+    background-color: black;
   }
 }
 .cool-link::after {
