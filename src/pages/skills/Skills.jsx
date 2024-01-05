@@ -53,7 +53,7 @@ const Skills = () => {
         />
       </div>
 
-      <div className="techStack flex max-w-[85vw] md:max-w-[65vw] lg:max-w-[60vw] flex-wrap items-center justify-center pt-20 py-10 mx-auto">
+      <div className="techStack flex max-w-[85vw] md:max-w-[65vw] lg:max-w-[55vw] flex-wrap items-center justify-center pt-20 py-10 mx-auto">
         <TechStack image={HTML} />
         <TechStack image={css} />
         <TechStack image={Javascript} />
