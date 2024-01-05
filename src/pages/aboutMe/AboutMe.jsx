@@ -1,5 +1,5 @@
 import "../../components/Styles.css";
-import Instagram from "./assets/instagram";
+import Instagram from "./assets/Instagram";
 import jaimin from "./assets/jaimin.png";
 import { Link } from "react-router-dom";
 import github from "./assets/github.svg";
