@@ -9,7 +9,7 @@ const Features = ({ image, text, heading }) => {
       <h1 className="text-2xl md:text-3xl p-5 pb-2 text-center max-w-xl text-white">
         {heading}
       </h1>
-      <p className=" text-gray-200 font-thin text-lg max-w-[200px] md:max-w-[250px] text-center">
+      <p className=" text-gray-200 font-thin text-lg max-w-[180px] md:max-w-[250px] text-center">
         {text}
       </p>
     </div>
