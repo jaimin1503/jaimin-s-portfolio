@@ -77,7 +77,7 @@
   z-index: 10;
 }
 .social-links {
-  backdrop-filter: blur(10px); /* Adjust the blur value to your preference */
+  backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.5); /* Adjust the opacity as needed */
 }
 .social-logos {

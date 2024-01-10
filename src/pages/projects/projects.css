@@ -1,0 +1,12 @@
+.project-bg {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.5); /* Adjust the opacity as needed */
+}
+.info-bg:hover {
+  background: rgb(3, 13, 54);
+  background: linear-gradient(
+    275deg,
+    rgba(3, 13, 54, 0.7273503151260504) 0%,
+    rgba(82, 82, 82, 1) 100%
+  );
+}

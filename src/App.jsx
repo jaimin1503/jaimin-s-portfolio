@@ -3,6 +3,7 @@ import HomePage from "./pages/home/HomePage";
 // import "./pages/cursor.js";
 import "./pages/cursor.css";
 import Skills from "./pages/skills/Skills";
+import ProjectsPage from "./pages/projects/ProjectsPage";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <HomePage />
       <AboutMe />
       <Skills />
+      <ProjectsPage />
     </>
   );
 }
