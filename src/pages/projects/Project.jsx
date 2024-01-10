@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 
 const Project = (props) => {
   const images = props.images;
+  const title = props.title;
+  const description = props.description;
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [imageSrc, setImageSrc] = useState("");
 
@@ -30,9 +32,12 @@ const Project = (props) => {
   }, [windowWidth]);
   return (
     <div>
-      <div className="box h-[65vh] w-[70vw] lg:h-[60vh] lg:w-[60vw] project-bg rounded-xl ">
-        <div className=" px-10 items-center info-bg w-full h-full info flex justify-start absolute rounded-xl">
-          <h1 className=" text-4xl text-red-400">Apple Home-page</h1>
+      <div className="box h-[65vh] w-[70vw] lg:h-[60vh] lg:w-[60vw] project-bg rounded-xl opacity-90">
+        <div className=" px-10 justify-center info-bg w-full h-full info flex flex-col items-start absolute rounded-xl">
+          <h1 className=" text-4xl text-red-400 font-bold">{title}</h1>
+          <p className=" text-white text-lg max-w-sm py-5 font-poiret">
+            {description}
+          </p>
         </div>
         <img
           className=" h-full w-full object-cover rounded-xl object-top"

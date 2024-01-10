@@ -16,10 +16,22 @@ const ProjectsPage = () => {
         </div>
         <div className="projects-container">
           <div className=" flex justify-center items-center lg:justify-start lg:p-10 py-5">
-            <Project images={appleImages} />
+            <Project
+              images={appleImages}
+              title={"Apple Home-page"}
+              description={
+                "This i my first project where my journey to web-development started. In this I have made official Apple website HomePage using HTML and CSS."
+              }
+            />
           </div>
           <div className=" flex justify-center items-center lg:justify-end lg:p-10 py-5">
-		  <Project images={netflixImages} />
+            <Project
+              images={netflixImages}
+              title={"Netflix Clone"}
+              description={
+                "This is my first project with backend in this I tried to make netflix clone. I have used HTML,CSS,NodeJs and Express."
+              }
+            />
           </div>
         </div>
       </div>
