@@ -36,12 +36,12 @@ const Project = (props) => {
   }, [windowWidth]);
   return (
     <div>
-      <div className="box w-[70vw] lg:w-[60vw] project-bg rounded-xl opacity-90">
+      <div className="box w-[70vw] lg:w-[60vw] project-bg rounded-xl">
         <div className=" px-10 justify-center info-bg w-full h-full info flex flex-col items-start absolute rounded-xl">
-          <h1 className=" text-3xl sm:text-4xl text-red-500 font-bold">
+          <h1 className=" text-3xl sm:text-5xl text-red-500 font-bold">
             {title}
           </h1>
-          <p className=" text-white text-lg max-w-sm py-5 font-poiret">
+          <p className=" text-white text-xl max-w-sm py-5 leading-5 md:leading-8 font-extralight">
             {description}
           </p>
           <div className="flex relative pt-5">

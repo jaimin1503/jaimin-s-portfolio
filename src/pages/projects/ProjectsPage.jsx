@@ -22,7 +22,7 @@ const ProjectsPage = () => {
               live={"https://apple-clone-homepage-add03b.netlify.app"}
               code={"https://github.com/jaimin1503/Apple_clone"}
               description={
-                "This i my first project where my journey to web-development started. In this I have made official Apple website HomePage using HTML and CSS."
+                "This i my first project from where my journey of web-development started. In this I have made official Apple website HomePage using HTML and CSS."
               }
             />
           </div>
