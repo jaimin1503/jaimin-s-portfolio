@@ -1,10 +1,14 @@
 import "./projects.css";
 import { useEffect, useState } from "react";
-
+import github from "./assets/github.svg";
+import link from "./assets/link.svg";
+import { Link } from "react-router-dom";
 const Project = (props) => {
   const images = props.images;
   const title = props.title;
   const description = props.description;
+  const live = props.live;
+  const code = props.code;
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [imageSrc, setImageSrc] = useState("");
 
@@ -32,15 +36,29 @@ const Project = (props) => {
   }, [windowWidth]);
   return (
     <div>
-      <div className="box h-[65vh] w-[70vw] lg:h-[60vh] lg:w-[60vw] project-bg rounded-xl opacity-90">
+      <div className="box w-[70vw] lg:w-[60vw] project-bg rounded-xl opacity-90">
         <div className=" px-10 justify-center info-bg w-full h-full info flex flex-col items-start absolute rounded-xl">
-          <h1 className=" text-4xl text-red-400 font-bold">{title}</h1>
+          <h1 className=" text-3xl sm:text-4xl text-red-500 font-bold">
+            {title}
+          </h1>
           <p className=" text-white text-lg max-w-sm py-5 font-poiret">
             {description}
           </p>
+          <div className="flex relative pt-5">
+            <Link to={code}>
+              <div className=" p-2 bg-white rounded-2xl mx-2 shadow-xl social-logos">
+                <img src={github} alt="github" />
+              </div>
+            </Link>
+            <Link to={live}>
+              <div className=" p-2 bg-white rounded-2xl mx-2 shadow-xl social-logos">
+                <img src={link} alt="github" />
+              </div>
+            </Link>
+          </div>
         </div>
         <img
-          className=" h-full w-full object-cover rounded-xl object-top"
+          className=" h-full w-full object-contain rounded-xl object-top"
           src={imageSrc}
           alt="image"
         />

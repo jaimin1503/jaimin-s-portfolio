@@ -19,6 +19,8 @@ const ProjectsPage = () => {
             <Project
               images={appleImages}
               title={"Apple Home-page"}
+              live={"https://apple-clone-homepage-add03b.netlify.app"}
+              code={"https://github.com/jaimin1503/Apple_clone"}
               description={
                 "This i my first project where my journey to web-development started. In this I have made official Apple website HomePage using HTML and CSS."
               }
@@ -31,6 +33,8 @@ const ProjectsPage = () => {
               description={
                 "This is my first project with backend in this I tried to make netflix clone. I have used HTML,CSS,NodeJs and Express."
               }
+              code={"https://github.com/jaimin1503/Netflix_Final"}
+              live={"https://netflix-clone-homepage-851a7b.netlify.app"}
             />
           </div>
         </div>
