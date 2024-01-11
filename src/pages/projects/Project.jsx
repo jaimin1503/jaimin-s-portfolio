@@ -41,7 +41,7 @@ const Project = (props) => {
           <h1 className=" text-3xl sm:text-4xl md:text-5xl text-red-500 font-bold">
             {title}
           </h1>
-          <p className=" text-white text-xl max-w-sm py-5 leading-5 md:leading-8 font-extralight">
+          <p className=" text-white text-lg md:text-xl max-w-sm py-5 leading-5 md:leading-8 font-light">
             {description}
           </p>
           <div className="flex relative pt-5">
