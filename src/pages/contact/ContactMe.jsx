@@ -1,0 +1,66 @@
+import React from "react";
+import { useForm, ValidationError } from "@formspree/react";
+import contact from "./assets/contact.svg";
+
+const ContactMe = () => {
+  const [state, handleSubmit] = useForm("mayrnnrj");
+
+  if (state.succeeded) {
+    return (
+      <div className="bg-[#092635] flex justify-center">
+        <h1 className="text-[#48b77a] text-3xl sm:text-5xl py-20">
+          Your message sent!
+        </h1>
+      </div>
+    );
+  }
+
+  return (
+    <div className="bg-[#092635] flex flex-col items-center md:flex-row md:justify-around py-10">
+      <div className="image">
+        <img className=" h-[40vh] lg:h-[60vh]" src={contact} alt="img" />
+      </div>
+      <div className="max-w-md pt-8 ">
+        <form onSubmit={handleSubmit}>
+          <input
+            id="name"
+            type="name"
+            name="name"
+            className="mt-1 p-3 my-5 w-full border border-gray-300 rounded-md outline-none"
+            placeholder="John Doe"
+          />
+          <input
+            id="email"
+            type="email"
+            name="email"
+            className="mt-1 p-3 my-5 w-full border border-gray-300 rounded-md outline-none"
+            placeholder="john@doe.com"
+          />
+          <ValidationError prefix="Email" field="email" errors={state.errors} />
+
+          <textarea
+            id="message"
+            name="message"
+            className="mt-1 p-2 my-5 w-full border border-gray-300 rounded-md outline-none"
+            placeholder="Hello Jaimin! 👋"
+          />
+          <ValidationError
+            prefix="Message"
+            field="message"
+            errors={state.errors}
+          />
+
+          <button
+            type="submit"
+            disabled={state.submitting}
+            className=" bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default ContactMe;
