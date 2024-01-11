@@ -7,6 +7,8 @@ import news from "./assets/news.png";
 import news_sm from "./assets/news_sm.png";
 import otw from "./assets/otw.png";
 import otw_sm from "./assets/otw_sm.png";
+import "../../fonts/Font.css";
+
 const ProjectsPage = () => {
   const appleImages = [apple, apple_sm];
   const netflixImages = [netflix, netflix_sm];
@@ -16,7 +18,7 @@ const ProjectsPage = () => {
     <div id="projects" className="bg-[#092635] flex justify-center p-5 ">
       <div className="container border-2 border-dashed  rounded-2xl">
         <div className="heading flex justify-center items-center">
-          <h1 className=" text-4xl md:text-5xl font-bold p-5 mb-10 text-center border-b-2 border-white max-w-xl text-white">
+          <h1 className=" text-4xl md:text-5xl font-bold p-5 mb-10 text-center border-b-2 border-white max-w-xl text-white font-Quicksand">
             My Projects
           </h1>
         </div>
@@ -58,7 +60,7 @@ const ProjectsPage = () => {
               images={otwImages}
               title={"Open to work"}
               description={
-                "This is my first project using react as frontend and Express, Node.js as backend and MongoDB for database. In this app you can creeat different profile for different role as a client or as a freeLancer."
+                "In this project I used react.js, Express.js, Node.js and MongoDB for database. In this app you can creeat different profile for different role as a client or as a freeLancer."
               }
               code={"https://github.com/jaimin1503/opentowork"}
               live={"https://opentowork-jaimin.netlify.app"}

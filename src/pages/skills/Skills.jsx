@@ -16,12 +16,13 @@ import Bootstrap from "./assets/Bootstrap.svg";
 import NodeJs from "./assets/NodeJs.svg";
 import Docker from "./assets/Docker.svg";
 import TechStack from "./TechStack";
+import "../../fonts/Font.css";
 
 const Skills = () => {
   return (
     <div className=" bg-[#092635]">
       <div className="heading flex justify-center items-center">
-        <h1 className=" text-4xl md:text-5xl font-bold p-5 pt-10 text-center border-b-2 border-white max-w-xl text-white">
+        <h1 className=" text-4xl md:text-5xl font-bold p-5 pt-10 text-center border-b-2 border-white max-w-xl text-white font-Quicksand">
           My teck stack
         </h1>
       </div>
