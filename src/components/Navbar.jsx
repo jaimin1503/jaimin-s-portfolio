@@ -1,7 +1,8 @@
-import "./Styles.css";
-import useCustomCursor from "./useCustomCursor";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { Link } from "react-scroll"; // Import Link from react-scroll
+import useCustomCursor from "./useCustomCursor";
+import "./Styles.css";
 
 const Navbar = () => {
   const { cursorVariant, variants } = useCustomCursor();
@@ -16,28 +17,37 @@ const Navbar = () => {
       />
       <nav>
         <div className="nav_items">
-          <div className=" flex md:justify-center right-0 z-40 absolute md:relative ">
+          <div className=" flex md:justify-center right-0 z-40 fixed md:relative ">
             <motion.ul
               className={`md:flex-row pr-10 font-poiret relative ${
                 isOpen ? "v-resp" : "shows"
               } visible`}
             >
+              {/* Use Link from react-scroll instead of 'a' */}
               <motion.li className="items text-lg my-4 mx-8 cursor-pointer cool-link">
-                HOME
+                <Link to="home" smooth={true} duration={500}>
+                  HOME
+                </Link>
               </motion.li>
               <motion.li className="items text-lg my-4 mx-8 cursor-pointer cool-link">
-                ABOUT ME
+                <Link to="about" smooth={true} duration={500}>
+                  ABOUT ME
+                </Link>
               </motion.li>
               <motion.li className="items text-lg my-4 mx-8 cursor-pointer cool-link">
-                SKILLS
+                <Link to="projects" smooth={true} duration={500}>
+                  PROJECTS
+                </Link>
               </motion.li>
               <motion.li className="items text-lg my-4 mx-8 cursor-pointer cool-link">
-                CONTACT
+                <Link to="contact" smooth={true} duration={500}>
+                  CONTACT
+                </Link>
               </motion.li>
             </motion.ul>
           </div>
         </div>
-        <div className="menu-button right-3 top-0 py-2 absolute md:hidden z-50 ">
+        <div className="menu-button right-3 top-0 py-2 md:hidden z-50 fixed">
           <svg
             onClick={() => setIsOpen(!isOpen)}
             style={{ cursor: "pointer" }}

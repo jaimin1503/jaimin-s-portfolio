@@ -10,7 +10,7 @@ const HomePage = () => {
   const { cursorVariant, variants, textEnter, textLeave } = useCustomCursor();
 
   return (
-    <div className="home-page bg-[#092635]">
+    <div id="home" className="home-page bg-[#092635]">
       <motion.div
         className="cursor"
         variants={variants}

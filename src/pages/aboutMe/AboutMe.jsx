@@ -12,7 +12,7 @@ const AboutMe = () => {
   const { cursorVariant, variants, textEnter, textLeave } = useCustomCursor();
 
   return (
-    <div className=" bg-[#9EC8B9]">
+    <div id="about" className=" bg-[#9EC8B9]">
       <motion.div
         className="cursor"
         variants={variants}
