@@ -75,12 +75,12 @@ const AnimateProject = ({ project, index }) => {
     if (inView) {
       controls.start({ opacity: 1, x: 0 });
     } else {
-      controls.start({ opacity: 0, x: isLeft ? -200 : 200 });
+      controls.start({ opacity: 0, x: isLeft ? "-100%" : "-100%" });
     }
   }, [controls, inView, isLeft]);
 
   const variants = {
-    hidden: { opacity: 0, x: isLeft ? -200 : 200 },
+    hidden: { opacity: 0, x: isLeft ? "-100%" : "-100%" },
     visible: { opacity: 1, x: 0 },
   };
 
@@ -91,7 +91,7 @@ const AnimateProject = ({ project, index }) => {
       animate={controls}
       variants={variants}
       transition={{ duration: 0.5 }}
-      className={`flex justify-center items-center lg:p-10 py-5 ${
+      className={`flex justify-center items-center lg:flex-grow lg:flex-shrink-0 lg:p-10 py-5 ${
         isLeft ? "lg:justify-start" : "lg:justify-end"
       }`}
     >

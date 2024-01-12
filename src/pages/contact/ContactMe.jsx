@@ -26,7 +26,7 @@ const ContactMe = () => {
         <div className="image">
           <img className=" h-[40vh] lg:h-[60vh]" src={contact} alt="img" />
         </div>
-        <div className="max-w-lg pt-8 border-2 rounded-3xl border-[#359c51]">
+        <div className="max-w-lg pt-8 border-2 rounded-3xl border-[#357a9c]">
           <form className=" px-20 py-10" onSubmit={handleSubmit}>
             <input
               id="name"
