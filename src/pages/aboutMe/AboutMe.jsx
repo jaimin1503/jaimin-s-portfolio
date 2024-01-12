@@ -21,33 +21,40 @@ const AboutMe = () => {
       <div className=" flex flex-col">
         <div className="about-me py-10 flex-col-reverse flex items-center lg:flex-row lg:justify-center">
           <div className="info-text p-10 flex flex-col items-start">
-            <h2 className=" sm:text-4xl text-3xl font-mono py-5 text-[#092635] font-bold">
+            <h2 className=" sm:text-4xl text-3xl font-Montserrat py-5 text-[#092635] font-semibold">
               Hello, I am Jaimin Viramgama
             </h2>
-            <h2 className=" sm:text-4xl text-3xl font-mono py-5 text-[#092635] font-medium">
+            <h2 className=" sm:text-4xl text-3xl font-Montserrat py-5 text-[#092635] font-medium">
               I do Front-end development.
             </h2>
             <p className=" lg:text-2xl text-xl font-poiret max-w-xl text-[#092635]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-              ipsum consequatur saepe omnis illum nostrum. In architecto, eos
-              adipisci ducimus id natus delectus nisi fuga qui consectetur
-              aperiam
+              <span className="ml-10"></span>Hey there! I'm Jaimin, a web
+              developer who loves creating awesome and good-looking apps. I'm
+              all about making sure they not only work great but also look
+              fantastic.
               <br />
-              dolorum beatae. Lorem ipsum dolor sit, amet consectetur
-              adipisicing elit. Aspernatur, at alias temporibus eos architecto
-              cupiditate ullam perferendis vitae id dolor minima? Molestias,
-              consequatur saepe molestiae aut iure hic provident ipsa. Lorem
-              ipsum dolor, sit
+              <span className="ml-10"></span>Right now, I'm on the lookout for a
+              part-time gig as a frontend and backend engineer. I bring a mix of
+              creativity and tech skills to the table, making me a perfect fit
+              for any team.
+              <br />
+              <span className="ml-10"></span>If you want to team up or know more
+              about what I do, let's set up a meeting! I'm all about turning
+              cool ideas into real, working stuff.
+              <br />
+              Let's make things happen!
             </p>
             <div className=" flex flex-col mt-10">
-              <div className=" links flex font-poiret my-5 font-extrabold">
-                <button
-                  onMouseEnter={textEnter}
-                  onMouseLeave={textLeave}
-                  className=" py-2 px-5 bg-[#092635] rounded-xl text-white"
-                >
-                  Schedule a meet
-                </button>
+              <div className=" links flex font-Montserrat my-5">
+                <Link to="https://calendly.com/jaiminv153/30min">
+                  <button
+                    onMouseEnter={textEnter}
+                    onMouseLeave={textLeave}
+                    className=" py-2 px-5 bg-[#092635] rounded-xl text-white"
+                  >
+                    Schedule a meet
+                  </button>
+                </Link>
                 <button
                   onMouseEnter={textEnter}
                   onMouseLeave={textLeave}

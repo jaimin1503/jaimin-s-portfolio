@@ -18,8 +18,8 @@ const ProjectsPage = () => {
     <div id="projects" className="bg-[#092635] flex justify-center p-5 ">
       <div className="container border-2 border-dashed  rounded-2xl">
         <div className="heading flex justify-center items-center">
-          <h1 className=" text-4xl md:text-5xl font-bold p-5 mb-10 text-center border-b-2 border-white max-w-xl text-white font-Quicksand">
-            My Projects
+          <h1 className=" text-4xl md:text-5xl font-bold p-5 mb-10 text-center border-b-2 border-white max-w-xl text-white font-Montserrat">
+            My <span className=" text-purple-400">Projects</span>
           </h1>
         </div>
         <div className="projects-container">

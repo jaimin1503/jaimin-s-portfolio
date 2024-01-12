@@ -16,10 +16,10 @@ const ContactMe = () => {
   }
 
   return (
-    <div className="bg-[#092635]">
+    <div id="contact" className="bg-[#092635]">
       <div className="heading flex justify-center items-center">
-        <h1 className=" text-4xl md:text-5xl font-bold p-5 mb-10 text-center border-b-2 border-white max-w-xl text-white font-Quicksand">
-          Contact Me!
+        <h1 className=" text-4xl md:text-5xl font-bold p-5 mb-10 text-center border-b-2 border-white max-w-xl text-white font-Montserrat">
+          Say <span className=" text-purple-400">Hello</span> to Me!
         </h1>
       </div>
       <div className=" flex flex-col items-center md:flex-row md:justify-around py-10">
@@ -34,6 +34,7 @@ const ContactMe = () => {
               name="name"
               className="mt-1 p-3 my-5 w-full border border-gray-300 rounded-md outline-none"
               placeholder="John Doe"
+              required
             />
             <input
               id="email"
@@ -41,6 +42,7 @@ const ContactMe = () => {
               name="email"
               className="mt-1 p-3 my-5 w-full border border-gray-300 rounded-md outline-none"
               placeholder="john@doe.com"
+              required
             />
             <ValidationError
               prefix="Email"
@@ -52,7 +54,8 @@ const ContactMe = () => {
               id="message"
               name="message"
               className="mt-1 p-2 my-5 w-full border border-gray-300 rounded-md outline-none"
-              placeholder="Hello Jaimin! 👋"
+              defaultValue={"Hello Jaimin! 👋"}
+              required
             />
             <ValidationError
               prefix="Message"

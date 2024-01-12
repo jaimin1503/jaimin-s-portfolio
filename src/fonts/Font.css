@@ -1,8 +1,8 @@
 @font-face {
-  font-family: "Quicksand";
-  src: url("./Quicksand/Quicksand-VariableFont_wght.ttf") format("truetype");
+  font-family: "Montserrat";
+  src: url("./Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
 }
-.font-Quicksand {
-  font-family: "Quicksand", sans-serif; /* Fallback font */
+.font-Montserrat {
+  font-family: "Montserrat", sans-serif; /* Fallback font */
   /* You can adjust other font properties here */
 }

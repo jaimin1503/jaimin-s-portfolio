@@ -34,7 +34,7 @@ const HomePage = () => {
             onMouseLeave={textLeave}
             className="intro_home md:mt-20"
           >
-            <h1 className=" md:-ml-40 text-balance lg:text-7xl sm:text-6xl text-6xl max-w-xl text-[#F8FAE5] font-poiret font-extrabold text-center md:mt-0 -mt-10 text-shadow">
+            <h1 className=" md:-ml-40 text-balance lg:text-7xl sm:text-6xl text-6xl max-w-xl text-[#F8FAE5] font-poiret font-extrabold text-center md:mt-0 -mt-10">
               Web Designer &amp; Developer
             </h1>
           </div>
