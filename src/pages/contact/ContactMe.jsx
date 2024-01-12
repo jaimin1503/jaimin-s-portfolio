@@ -26,8 +26,8 @@ const ContactMe = () => {
         <div className="image">
           <img className=" h-[40vh] lg:h-[60vh]" src={contact} alt="img" />
         </div>
-        <div className="max-w-md pt-8 ">
-          <form onSubmit={handleSubmit}>
+        <div className="max-w-lg pt-8 border-2 rounded-3xl border-[#359c51]">
+          <form className=" px-20 py-10" onSubmit={handleSubmit}>
             <input
               id="name"
               type="name"
@@ -63,13 +63,15 @@ const ContactMe = () => {
               errors={state.errors}
             />
 
-            <button
-              type="submit"
-              disabled={state.submitting}
-              className=" bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"
-            >
-              Submit
-            </button>
+            <div className=" flex justify-center">
+              <button
+                type="submit"
+                disabled={state.submitting}
+                className=" bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"
+              >
+                Submit
+              </button>
+            </div>
           </form>
         </div>
       </div>
