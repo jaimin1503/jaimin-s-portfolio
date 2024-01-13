@@ -36,29 +36,29 @@ const Project = (props) => {
   }, [windowWidth]);
   return (
     <div>
-      <div className="box w-[70vw] lg:w-[60vw] project-bg rounded-xl">
-        <div className=" px-10 justify-center info-bg w-full h-full info flex flex-col items-start absolute rounded-xl">
-          <h1 className=" text-3xl sm:text-4xl md:text-5xl text-red-500 font-bold">
+      <div className="box relative w-[70vw] lg:w-[60vw] project-bg rounded-xl overflow-hidden">
+        <div className="px-10 justify-center info-bg w-full h-full info flex flex-col items-start absolute rounded-xl">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl text-red-500 font-bold">
             {title}
           </h1>
-          <p className=" text-white text-lg md:text-xl max-w-sm py-5 leading-5 md:leading-8 font-light">
+          <p className="text-white text-lg md:text-xl max-w-sm py-5 leading-5 md:leading-8 font-light">
             {description}
           </p>
           <div className="flex relative pt-5">
             <Link to={code}>
-              <div className=" p-2 bg-white rounded-2xl mx-2 shadow-xl social-logos">
+              <div className="p-2 bg-white rounded-2xl mx-2 shadow-xl social-logos">
                 <img className="h-6 md:h-8" src={github} alt="github" />
               </div>
             </Link>
             <Link to={live}>
-              <div className=" p-2 bg-white rounded-2xl mx-2 shadow-xl social-logos">
+              <div className="p-2 bg-white rounded-2xl mx-2 shadow-xl social-logos">
                 <img className="h-6 md:h-8" src={link} alt="github" />
               </div>
             </Link>
           </div>
         </div>
         <img
-          className=" h-full w-full object-contain rounded-xl object-top"
+          className="h-full w-full object-contain rounded-xl object-top"
           src={imageSrc}
           alt="image"
         />
