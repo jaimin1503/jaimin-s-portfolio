@@ -12,22 +12,27 @@ const AboutMe = () => {
   const { cursorVariant, variants, textEnter, textLeave } = useCustomCursor();
 
   return (
-    <div id="about" className=" bg-[#9EC8B9]">
+    <div id="about" className=" bg-[#092635]">
       <motion.div
         className="cursor"
         variants={variants}
         animate={cursorVariant}
       />
       <div className=" flex flex-col">
+        <div className="heading flex justify-center items-center">
+          <h1 className="text-4xl md:text-5xl font-bold p-5 text-center border-b-2 border-white max-w-xl text-white font-Montserrat">
+            About <span className="text-purple-400">Me!</span>
+          </h1>
+        </div>
         <div className="about-me py-10 flex-col-reverse flex items-center lg:flex-row lg:justify-center">
           <div className="info-text p-10 flex flex-col items-start">
-            <h2 className=" sm:text-4xl text-3xl font-Montserrat py-5 text-[#092635] font-semibold">
-              Hello, I am Jaimin Viramgama
+            <h2 className=" sm:text-5xl text-3xl font-poiret py-5 text-[#dce1e0] font-bold">
+              Hola 👋,
             </h2>
-            <h2 className=" sm:text-4xl text-3xl font-Montserrat py-5 text-[#092635] font-medium">
+            <h2 className=" sm:text-4xl text-3xl font-poiret py-5 text-[#dce1e0] font-bold">
               I do Front-end development.
             </h2>
-            <p className=" lg:text-2xl text-xl font-poiret max-w-xl text-[#092635]">
+            <p className=" lg:text-2xl text-xl font-poiret max-w-xl text-[#9EC8B9]">
               <span className="ml-10"></span>Hey there! I'm Jaimin, a web
               developer who loves creating awesome and good-looking apps. I'm
               all about making sure they not only work great but also look
@@ -47,29 +52,21 @@ const AboutMe = () => {
             <div className=" flex flex-col mt-10">
               <div className=" links flex font-Montserrat my-5">
                 <Link to="https://calendly.com/jaiminv153/30min">
-                  <button
-                    onMouseEnter={textEnter}
-                    onMouseLeave={textLeave}
-                    className=" py-2 px-5 bg-[#092635] rounded-xl text-white"
-                  >
+                  <button className=" py-3 px-5 bg-[#9EC8B9] font-bold hover:scale-105 transition-all duration-300 ease-in-out rounded-xl text-[#092635]">
                     Schedule a meet
                   </button>
                 </Link>
                 <button
                   onMouseEnter={textEnter}
                   onMouseLeave={textLeave}
-                  className=" py-2 px-5 text-lg font-extrabold resume-link"
+                  className=" py-2 px-5 text-lg font-bold text-[#9EC8B9] resume-lin"
                 >
                   Resume&#8594;
                 </button>
               </div>
 
               <div className="social-links w-fit mt-5 p-3 rounded-2xl">
-                <div
-                  onMouseEnter={textEnter}
-                  onMouseLeave={textLeave}
-                  className="flex relative"
-                >
+                <div className="flex relative">
                   <Link to="https://www.linkedin.com/in/jaimin-viramgama-487485233/">
                     <div className=" p-2 bg-white rounded-2xl mx-2 shadow-xl social-logos">
                       <img src={linkedin} alt="linkedin" />

@@ -16,7 +16,7 @@ const Navbar = () => {
         animate={cursorVariant}
       />
       <nav>
-        <div className="nav_items">
+        <div className="nav_items fixed w-screen">
           <div className=" flex md:justify-center right-0 z-40 fixed md:relative ">
             <motion.ul
               className={`md:flex-row pr-10 font-poiret relative ${
