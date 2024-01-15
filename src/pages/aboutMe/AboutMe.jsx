@@ -1,6 +1,6 @@
 import "../../components/Styles.css";
 import Instagram from "./assets/Instagram";
-import jaimin from "./assets/jaimin.png";
+import jaimin from "./assets/jaimin.jpeg";
 import { Link } from "react-router-dom";
 import github from "./assets/github.svg";
 import linkedin from "./assets/linkedin.svg";
@@ -27,7 +27,7 @@ const AboutMe = () => {
         <div className="about-me py-10 flex-col-reverse flex items-center lg:flex-row lg:justify-center">
           <div className="info-text p-10 flex flex-col items-start">
             <h2 className=" sm:text-5xl text-3xl font-poiret py-5 text-[#dce1e0] font-bold">
-              Hola 👋,
+              Hello! 👋, People
             </h2>
             <h2 className=" sm:text-4xl text-3xl font-poiret py-5 text-[#dce1e0] font-bold">
               I do Front-end development.
@@ -93,7 +93,7 @@ const AboutMe = () => {
           </div>
           <div className="my-image">
             <img
-              className="w-[50vw] sm:w-[40vw] md:w-[30vw] object-center lg:mb-40"
+              className="w-[50vw] sm:w-[40vw] md:w-[30vw] object-center lg:mb-40 rounded-2xl"
               src={jaimin}
               alt="jaimin"
             />
