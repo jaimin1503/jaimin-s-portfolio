@@ -30,13 +30,13 @@ const AboutMe = () => {
             <h2 className=" sm:text-5xl text-3xl font-poiret py-5 text-[#dce1e0] font-bold">
               Hello! 👋, People
             </h2>
-            <div className=" sm:text-4xl text-2xl font-poiret py-5 text-[#dce1e0] font-bold flex">
-              <h1 className=" pr-4">I do</h1>{" "}
+            <div className=" sm:text-4xl text-2xl font-poiret py-5 text-[#dce1e0] font-bold flex overflow-hidden">
+              <h1 className=" pr-2 md:pr-4">I do</h1>{" "}
               <div className=" text-purple-400">
                 <TypeWriter />
               </div>
             </div>
-            <p className=" lg:text-2xl text-xl font-poiret max-w-xl text-[#9EC8B9]">
+            <p className=" lg:text-2xl text-xl font-poiret max-w-xl text-[#9EC8B9] text-justify">
               <span className="ml-10"></span>Hey there! I'm Jaimin, a web
               developer who loves creating awesome and good-looking apps. I'm
               all about making sure they not only work great but also look
