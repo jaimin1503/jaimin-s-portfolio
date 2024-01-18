@@ -1,5 +1,5 @@
 import "../../components/Styles.css";
-import Instagram from "./assets/Instagram";
+import insta from "./assets/Instagram.svg";
 import jaimin from "./assets/jaimin.jpeg";
 import { Link } from "react-router-dom";
 import github from "./assets/github.svg";
@@ -7,6 +7,7 @@ import linkedin from "./assets/linkedin.svg";
 import email from "./assets/email.svg";
 import { motion } from "framer-motion";
 import useCustomCursor from "../../components/useCustomCursor";
+import TypeWriter from "../../components/TypeWriter";
 
 const AboutMe = () => {
   const { cursorVariant, variants, textEnter, textLeave } = useCustomCursor();
@@ -29,9 +30,12 @@ const AboutMe = () => {
             <h2 className=" sm:text-5xl text-3xl font-poiret py-5 text-[#dce1e0] font-bold">
               Hello! 👋, People
             </h2>
-            <h2 className=" sm:text-4xl text-3xl font-poiret py-5 text-[#dce1e0] font-bold">
-              I do Front-end development.
-            </h2>
+            <div className=" sm:text-4xl text-3xl font-poiret py-5 text-[#dce1e0] font-bold flex">
+              <h1 className=" pr-4">I do</h1>{" "}
+              <div className=" text-purple-400">
+                <TypeWriter />
+              </div>
+            </div>
             <p className=" lg:text-2xl text-xl font-poiret max-w-xl text-[#9EC8B9]">
               <span className="ml-10"></span>Hey there! I'm Jaimin, a web
               developer who loves creating awesome and good-looking apps. I'm
@@ -79,7 +83,7 @@ const AboutMe = () => {
                   </Link>
                   <Link to="https://www.instagram.com/jaimin_15.3/">
                     <div className=" p-2 bg-white rounded-2xl mx-2 shadow-xl social-logos">
-                      <Instagram />
+                      <img src={insta} alt="insta" />
                     </div>
                   </Link>
                   <Link to="mailto:jaiminviramgama152@gmail.com">

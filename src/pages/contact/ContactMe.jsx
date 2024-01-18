@@ -26,8 +26,11 @@ const ContactMe = () => {
         <div className="image">
           <img className=" h-[40vh] lg:h-[60vh]" src={contact} alt="img" />
         </div>
-        <div className="max-w-lg pt-8 border-2 rounded-3xl border-[#357a9c]">
-          <form className=" px-20 py-10" onSubmit={handleSubmit}>
+        <div className="max-w-lg md:max-w-sm lg:max-w-lg pt-8 border-2 rounded-3xl m-5 md:m-0 border-[#9ec8b9]">
+          <form
+            className=" px-10 py-5 lg:px-20 lg:py-10"
+            onSubmit={handleSubmit}
+          >
             <input
               id="name"
               type="name"
@@ -53,6 +56,7 @@ const ContactMe = () => {
             <textarea
               id="message"
               name="message"
+              rows={4}
               className="mt-1 p-2 my-5 w-full border border-gray-300 rounded-md outline-none"
               defaultValue={"Hello Jaimin! 👋"}
               required
