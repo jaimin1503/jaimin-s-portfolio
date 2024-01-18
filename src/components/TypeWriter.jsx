@@ -30,7 +30,7 @@ const TypeWriter = () => {
     }
   }
   useEffect(() => {
-    const timer = setTimeout(type, isDeleting ? 100 : 100);
+    const timer = setTimeout(type, isDeleting ? 25 : 100);
     // Cleanup function to clear the timeout
     return () => clearTimeout(timer);
     // Add dependencies to the dependency array
