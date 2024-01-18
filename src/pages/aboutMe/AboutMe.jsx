@@ -30,7 +30,7 @@ const AboutMe = () => {
             <h2 className=" sm:text-5xl text-3xl font-poiret py-5 text-[#dce1e0] font-bold">
               Hello! 👋, People
             </h2>
-            <div className=" sm:text-4xl text-3xl font-poiret py-5 text-[#dce1e0] font-bold flex">
+            <div className=" sm:text-4xl text-2xl font-poiret py-5 text-[#dce1e0] font-bold flex">
               <h1 className=" pr-4">I do</h1>{" "}
               <div className=" text-purple-400">
                 <TypeWriter />
