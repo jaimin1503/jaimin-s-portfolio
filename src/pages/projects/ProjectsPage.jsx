@@ -16,7 +16,6 @@ const projectsData = [
   {
     images: [apple, apple_sm],
     title: "Apple Home-page",
-    live: "https://apple-clone-homepage-add03b.netlify.app",
     code: "https://github.com/jaimin1503/Apple_clone",
     description:
       "This is my first project from where my journey of web-development started. In this, I have made the official Apple website HomePage using HTML and CSS.",
@@ -27,7 +26,6 @@ const projectsData = [
     description:
       "This is my first project with backend in this I tried to make a netflix clone. I have used HTML, CSS, NodeJs, and Express.",
     code: "https://github.com/jaimin1503/Netflix_Final",
-    live: "https://netflix-clone-homepage-851a7b.netlify.app",
   },
   {
     images: [news, news_sm],
@@ -40,7 +38,7 @@ const projectsData = [
     images: [otw, otw_sm],
     title: "Open to work",
     description:
-      "In this project I used react.js, Express.js, Node.js and MongoDB for database. In this app you can create a different profile for different roles as a client or as a freelancer.",
+      "In this project I used react.js, Node.js and MongoDB. In this app you can create a different profile for different roles as a client or as a freelancer.",
     code: "https://github.com/jaimin1503/opentowork",
     live: "https://opentowork-jaimin.netlify.app",
   },
