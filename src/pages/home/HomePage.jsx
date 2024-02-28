@@ -16,7 +16,9 @@ const HomePage = () => {
         variants={variants}
         animate={cursorVariant}
       />
-      <Navbar />
+      <div className=" py-5">
+        <Navbar />
+      </div>
       <div className=" flex justify-center flex-col items-center lg:flex-row">
         <div className="developer ml-10 pointer-events-none">
           <img

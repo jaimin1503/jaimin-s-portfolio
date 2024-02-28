@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Project from "./Project";
-import apple from "./assets/apple.png";
-import apple_sm from "./assets/apple-sm.png";
+import insta from "./assets/insta.png";
+import insta_sm from "./assets/insta_sm.png";
 import netflix from "./assets/netflix.png";
 import netflix_sm from "./assets/netflix-sm.png";
 import news from "./assets/news.png";
@@ -14,11 +14,12 @@ import "../../fonts/Font.css";
 
 const projectsData = [
   {
-    images: [apple, apple_sm],
-    title: "Apple Home-page",
-    code: "https://github.com/jaimin1503/Apple_clone",
+    images: [insta, insta_sm],
+    title: "Instagram Clone",
+    code: "https://github.com/jaimin1503/rj-insta",
+    live: "https://rj-insta.vercel.app",
     description:
-      "This is my first project from where my journey of web-development started. In this, I have made the official Apple website HomePage using HTML and CSS.",
+      "In this project me and my friend tried to make fully working Instagram clone with all the features like posting new post and liking and commenting on post.",
   },
   {
     images: [netflix, netflix_sm],
@@ -33,6 +34,7 @@ const projectsData = [
     description:
       "This is my first project with React.js, In this, I used the news API for fetching current daily news using Axios. And used react-classbased components.",
     code: "https://github.com/jaimin1503/newsapp-main",
+    live: "https://hunt-news.netlify.app",
   },
   {
     images: [otw, otw_sm],
