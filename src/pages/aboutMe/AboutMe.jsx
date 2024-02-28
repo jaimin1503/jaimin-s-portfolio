@@ -97,7 +97,7 @@ const AboutMe = () => {
           </div>
           <div className="my-image">
             <img
-              className="w-[50vw] sm:w-[40vw] md:w-[30vw] object-center lg:mb-40 rounded-2xl"
+              className="w-[30vw] h-[30vw] object-cover sm:w-[20vw] sm:h-[20vw] md:w-[20vw] md:h-[20vw] object-center lg:mb-40 rounded-full "
               src={jaimin}
               alt="jaimin"
             />

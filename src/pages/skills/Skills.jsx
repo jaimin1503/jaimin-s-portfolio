@@ -27,6 +27,7 @@ const Skills = () => {
         </h1>
       </div>
       <div className="features flex flex-wrap md:flex-nowrap justify-around mt-5 md:w-[80vw] mx-auto">
+        
         <Features
           image={faster}
           heading={"Fast"}
