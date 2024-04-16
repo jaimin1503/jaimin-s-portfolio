@@ -16,10 +16,10 @@ const HomePage = () => {
         variants={variants}
         animate={cursorVariant}
       />
-      <div className=" py-5">
+      <div className=" md:py-5">
         <Navbar />
       </div>
-      <div className=" flex justify-center flex-col items-center lg:flex-row">
+      <div className="pt-5 flex justify-center flex-col items-center lg:flex-row">
         <div className="developer ml-10 pointer-events-none">
           <img
             className=" object-cover h-[40vh] md:h-[60vh] developer-img "
@@ -36,7 +36,7 @@ const HomePage = () => {
             onMouseLeave={textLeave}
             className="intro_home md:mt-20"
           >
-            <h1 className=" md:-ml-40 text-balance lg:text-7xl sm:text-6xl text-6xl max-w-xl text-[#F8FAE5] font-poiret font-extrabold text-center md:mt-0 -mt-10">
+            <h1 className=" md:-ml-40 text-balance lg:text-7xl sm:text-6xl text-5xl max-w-xl text-[#F8FAE5] font-poiret font-extrabold text-center md:mt-0 -mt-10">
               Web Designer &amp; Developer
             </h1>
           </div>

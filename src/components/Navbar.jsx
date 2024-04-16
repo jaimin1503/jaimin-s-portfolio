@@ -19,11 +19,10 @@ const Navbar = () => {
         <div className="nav_items fixed w-screen z-50">
           <div className=" flex md:justify-center right-0 z-40 fixed md:relative">
             <motion.ul
-              className={`md:flex-row pr-10 md:pr-0 font-poiret relative md:rounded-3xl ${
+              className={`md:flex-row pr-10 md:pr-0 font-poiret relative md:rounded-full ${
                 isOpen ? "v-resp" : "shows nave-bg"
               } visible`}
             >
-              {/* Use Link from react-scroll instead of 'a' */}
               <motion.li className="items text-lg my-4 mx-8 cursor-pointer cool-link">
                 <Link to="home" smooth={true} duration={500}>
                   HOME

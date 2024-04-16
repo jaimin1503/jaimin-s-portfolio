@@ -60,13 +60,17 @@ const AboutMe = () => {
                     Schedule a meet
                   </button>
                 </Link>
-                <button
-                  onMouseEnter={textEnter}
-                  onMouseLeave={textLeave}
-                  className=" py-2 px-5 text-lg font-bold text-[#9EC8B9] resume-lin"
+                <Link
+                  to={`https://drive.google.com/file/d/1b3Im91wJBcdNNlqRqA7B3QAzAv3j2q_1/view?usp=sharing`}
                 >
-                  Resume&#8594;
-                </button>
+                  <button
+                    onMouseEnter={textEnter}
+                    onMouseLeave={textLeave}
+                    className=" py-2 px-5 text-lg font-bold text-[#9EC8B9] resume-lin"
+                  >
+                    Resume&#8594;
+                  </button>
+                </Link>
               </div>
 
               <div className="social-links w-fit mt-5 p-3 rounded-2xl">

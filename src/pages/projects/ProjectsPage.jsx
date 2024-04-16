@@ -4,8 +4,8 @@ import { useInView } from "react-intersection-observer";
 import Project from "./Project";
 import insta from "./assets/insta.png";
 import insta_sm from "./assets/insta_sm.png";
-import netflix from "./assets/netflix.png";
-import netflix_sm from "./assets/netflix-sm.png";
+import do_remote from "./assets/do_remote.png";
+import do_remote_sm from "./assets/dr_sm.png";
 import news from "./assets/news.png";
 import news_sm from "./assets/news_sm.png";
 import otw from "./assets/otw.png";
@@ -15,18 +15,19 @@ import "../../fonts/Font.css";
 const projectsData = [
   {
     images: [insta, insta_sm],
-    title: "Instagram Clone",
+    title: "Friends-Flock",
     code: "https://github.com/jaimin1503/rj-insta",
-    live: "https://rj-insta.vercel.app",
+    live: "https://friends-flock.vercel.app",
     description:
-      "In this project me and my friend tried to make fully working Instagram clone with all the features like posting new post and liking and commenting on post.",
+      "In this project me and my friend made a fully working Instagram clone with all the features like posting new post and liking and commenting on post.",
   },
   {
-    images: [netflix, netflix_sm],
-    title: "Netflix Clone",
+    images: [do_remote, do_remote_sm],
+    title: "Do-Remote",
     description:
-      "This is my first project with backend in this I tried to make a netflix clone. I have used HTML, CSS, NodeJs, and Express.",
-    code: "https://github.com/jaimin1503/Netflix_Final",
+      "A freelancer and client platform where you can create a profile as a client or as a freelancer. And you can post a job or apply for a job.",
+    code: "https://github.com/jaimin1503/do-remote",
+    live: "https://do-remote.vercel.app",
   },
   {
     images: [news, news_sm],
