@@ -23,7 +23,7 @@ const Skills = () => {
     <div className=" bg-[#092635]">
       <div className="heading flex justify-center items-center">
         <h1 className=" text-4xl md:text-5xl font-bold p-5 pt-10 text-center border-b-2 border-white max-w-xl text-white font-Montserrat">
-          My tech stack
+          My Tech Stack
         </h1>
       </div>
       <div className="features flex flex-wrap md:flex-nowrap justify-around mt-5 md:w-[80vw] mx-auto">
