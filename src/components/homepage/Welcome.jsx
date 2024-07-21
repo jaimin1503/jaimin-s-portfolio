@@ -1,4 +1,5 @@
 import "../Styles.css";
+import RadialGradient from "../magicui/radial-gradient";
 
 const Welcome = () => {
   return (
@@ -13,6 +14,7 @@ const Welcome = () => {
         <h2 className=" text-2xl md:text-4xl lg:text-3xl font-poiret font-semibold">
           Portfolio
         </h2>
+        <RadialGradient />
       </div>
     </div>
   );
