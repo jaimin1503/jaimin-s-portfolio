@@ -3,12 +3,13 @@ import { useEffect, useState } from "react";
 import github from "./assets/github.svg";
 import link from "./assets/link.svg";
 import { Link } from "react-router-dom";
-const Project = (props) => {
-  const images = props.images;
-  const title = props.title;
-  const description = props.description;
-  const live = props.live;
-  const code = props.code;
+const Project = ({ project, index }) => {
+  const stack = project.techstack;
+  const images = project.images;
+  const title = project.title;
+  const description = project.description;
+  const live = project.live;
+  const code = project.code;
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [imageSrc, setImageSrc] = useState("");
 
@@ -35,15 +36,19 @@ const Project = (props) => {
     }
   }, [windowWidth]);
   return (
-    <div>
-      <div className="box relative w-[70vw] lg:w-[60vw] project-bg rounded-xl overflow-hidden">
-        <div className="px-10 justify-center info-bg w-full h-full info flex flex-col items-start absolute rounded-xl">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl text-red-500 font-bold">
+    <div className=" projectCard">
+      <div className="projectNumber rightNumber text-9xl sm:text-[200px]">
+        0{index + 1}
+      </div>
+      <div className=" box relative w-[70vw] lg:w-[60vw] project-bg rounded-xl overflow-hidden">
+        <div className="px-10 justify-center info-bg w-full h-full info flex flex-col items-start absolute rounded-xl z-50">
+          <h1 className=" md:projectHeading text-3xl sm:text-4xl md:text-5xl text-red-500 font-bold">
             {title}
           </h1>
           <p className="text-white text-lg md:text-xl max-w-lg py-5 leading-5 md:leading-8 font-light">
             {description}
           </p>
+
           <div className="flex relative pt-5">
             <Link to={code}>
               <div className="p-2 bg-white rounded-2xl mx-2 shadow-xl social-logos">
@@ -55,6 +60,19 @@ const Project = (props) => {
                 <img className="h-6 md:h-8" src={link} alt="github" />
               </div>
             </Link>
+          </div>
+          <div className=" flex md:max-w-sm flex-wrap mt-10 max-w-sm">
+            {stack?.map((item) => {
+              return (
+                <img
+                  className="md:projectSkill w-[40px] m-2 z-50"
+                  src={item}
+                  key={item}
+                  alt=""
+                  loading="lazy"
+                />
+              );
+            })}
           </div>
         </div>
         <img
