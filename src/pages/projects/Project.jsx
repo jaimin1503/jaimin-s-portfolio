@@ -65,7 +65,7 @@ const Project = ({ project, index }) => {
             {stack?.map((item) => {
               return (
                 <img
-                  className="md:projectSkill w-[40px] m-2 z-50"
+                  className="md:projectSkill w-[25px] md:w-[30px] xl:w-[40px] m-2 z-50"
                   src={item}
                   key={item}
                   alt=""
