@@ -104,6 +104,9 @@ const AboutMe = () => {
               className="w-[30vw] h-[30vw] object-cover sm:w-[20vw] sm:h-[20vw] md:w-[20vw] md:h-[20vw] object-center lg:mb-40 rounded-full "
               src={jaimin}
               alt="jaimin"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              decoding="async"
             />
           </div>
         </div>

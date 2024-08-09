@@ -70,6 +70,7 @@ const Project = ({ project, index }) => {
                   key={item}
                   alt=""
                   loading="lazy"
+                  decoding="async"
                 />
               );
             })}
