@@ -45,7 +45,7 @@ const Project = ({ project, index }) => {
           <h1 className=" md:projectHeading text-3xl sm:text-4xl md:text-5xl text-red-500 font-bold">
             {title}
           </h1>
-          <p className="text-white text-lg md:text-xl max-w-lg py-5 leading-5 md:leading-8 font-light">
+          <p className="text-white text-lg md:text-xl max-w-lg leading-5 md:leading-8 font-light">
             {description}
           </p>
 
@@ -61,7 +61,7 @@ const Project = ({ project, index }) => {
               </div>
             </Link>
           </div>
-          <div className=" flex md:max-w-sm flex-wrap mt-10 max-w-sm">
+          <div className=" flex md:max-w-sm flex-wrap mt-5 md:mt-10 max-w-sm">
             {stack?.map((item) => {
               return (
                 <img
@@ -80,6 +80,8 @@ const Project = ({ project, index }) => {
           className="h-full w-full object-contain rounded-xl object-top"
           src={imageSrc}
           alt="image"
+          loading="lazy"
+          decoding="async"
         />
       </div>
     </div>
