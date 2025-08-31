@@ -1,0 +1,96 @@
+@font-face {
+  font-family: "Poiret One";
+  src: url("./assets/Poiret_One/PoiretOne-Regular.ttf") format("truetype");
+}
+.font-poiret {
+  font-family: "Poiret One", sans-serif; /* Fallback font */
+  /* You can adjust other font properties here */
+}
+.cool-link {
+  color: #9ec8b9;
+  display: inline-block;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .v-resp {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    border-radius: 0 0 0 20%;
+  }
+  .shows {
+    display: flex;
+    display: none;
+    background-color: black;
+  }
+}
+.cool-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background: #9ec8b9;
+  transition: width 0.3s;
+}
+
+.cool-link:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+.welcome-circle {
+  animation: welcome-circle 1s infinite;
+  mix-blend-mode: difference;
+}
+@-webkit-keyframes welcome-circle {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}
+@keyframes welcome-circle {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(99, 200, 178, 0.4);
+    box-shadow: 0 0 0 0 rgba(87, 171, 146, 0.4);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 20px rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 20px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}
+
+.text-shadow {
+  text-shadow: 0px 0px 50px #9ec8b9;
+}
+
+.developer-img {
+  position: relative;
+  z-index: 10;
+}
+.social-links {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.5); /* Adjust the opacity as needed */
+}
+.nave-bg {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid #9ec8b9;
+}
+.social-logos {
+  transition: 0.2s;
+}
+.social-logos:hover {
+  transform: translateY(-10px) scale(1.2);
+}
+.resume-link:hover {
+  color: rgb(20, 20, 207);
+}
