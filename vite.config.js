@@ -6,11 +6,10 @@ import path from 'path'
 export default defineConfig(({ command }) => ({
   plugins: [react()],
   root: path.resolve(__dirname),
-  // For GitHub Pages under https://<user>.github.io/<repo>/
-  // Overridden by BASE_PATH env var in CI (see .github/workflows/deploy.yml).
-  base: command === 'build'
-    ? (process.env.BASE_PATH || '/jaimin-s-portfolio/')
-    : '/',
+  // For GitHub Pages under https://<user>.github.io/<repo>/ the workflow sets
+  // BASE_PATH=/<repo>/. Locally and on other hosts (Vercel/Netlify), we
+  // default to '/' so assets resolve correctly.
+  base: command === 'build' ? (process.env.BASE_PATH || '/') : '/',
   server: {
     host: '0.0.0.0',
     port: 3000,
