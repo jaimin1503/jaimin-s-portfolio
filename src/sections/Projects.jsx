@@ -3,6 +3,17 @@ import Section from "../components/Section";
 const projects = [
   {
     id: "01",
+    title: "agent-peek",
+    kind: "developer tool · desktop overlay",
+    year: "2026",
+    desc: "An always-on-top overlay that shows what your Claude Code sessions are doing, so you can leave the terminal and only come back when something actually needs you.",
+    stack: ["tauri", "rust", "react", "typescript", "vite"],
+    code: "https://github.com/jaimin1503/agent-peek",
+    live: "https://github.com/jaimin1503/agent-peek/releases/latest",
+    status: "shipped",
+  },
+  {
+    id: "02",
     title: "friends-flock",
     kind: "social · full-stack",
     year: "2024",
@@ -13,7 +24,7 @@ const projects = [
     status: "shipped",
   },
   {
-    id: "02",
+    id: "03",
     title: "do-remote",
     kind: "marketplace · saas",
     year: "2024",
@@ -24,7 +35,7 @@ const projects = [
     status: "shipped",
   },
   {
-    id: "03",
+    id: "04",
     title: "resume-hub",
     kind: "tool · generator",
     year: "2024",
@@ -35,7 +46,7 @@ const projects = [
     status: "shipped",
   },
   {
-    id: "04",
+    id: "05",
     title: "open-to-work",
     kind: "hackathon · fullstack",
     year: "2023",
