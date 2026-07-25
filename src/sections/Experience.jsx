@@ -2,35 +2,16 @@ import Section from "../components/Section";
 
 const roles = [
   {
-    org: "acme.co",
-    role: "senior frontend engineer",
+    org: "emgage.work",
+    role: "software engineer",
     period: "2024 — present",
-    location: "remote",
+    location: "full-time · ~1.5 yrs",
     bullets: [
-      "Leading a redesign of the core dashboard used by 12k+ daily users.",
-      "Introduced a mono-themed design system; shipped 40+ tokens & primitives.",
-      "Mentored two juniors; instituted weekly craft reviews.",
-    ],
-  },
-  {
-    org: "studio-north",
-    role: "product engineer",
-    period: "2022 — 2024",
-    location: "hybrid, ahmedabad",
-    bullets: [
-      "Owned end-to-end delivery of a marketplace product from 0 → 1.",
-      "Built the payments layer and reduced checkout errors by 62%.",
-      "Rebuilt the marketing site — pagespeed went 41 → 98.",
-    ],
-  },
-  {
-    org: "freelance",
-    role: "developer & designer",
-    period: "2020 — 2022",
-    location: "worldwide",
-    bullets: [
-      "Delivered 15+ small to mid-sized web projects across e-com, portfolio, saas.",
-      "Long-term retainers with three studios in EU & IN.",
+      "Building and maintaining production-grade features across the frontend and backend of a scalable web platform.",
+      "Working day-to-day with React, TypeScript and Spring Boot — from responsive UI components down to RESTful APIs and database layers.",
+      "Owning features end-to-end: design → implementation → code review → release, in an agile, cross-functional team.",
+      "Debugging complex issues in production, writing clean and maintainable code, and focusing on performance, reliability and UX.",
+      "Continuously learning and adopting new tools/patterns to raise the bar for both developer experience and product quality.",
     ],
   },
 ];

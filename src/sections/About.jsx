@@ -2,13 +2,13 @@ import Section from "../components/Section";
 
 const factRows = [
   ["name", "Jaimin Viramgama"],
-  ["role", "Full-stack Developer"],
+  ["role", "Software Engineer"],
   ["based", "Ahmedabad, India"],
-  ["stack", "TypeScript · React · Node · Postgres"],
-  ["experience", "3+ years shipping web apps"],
-  ["studying", "distributed systems, type theory"],
+  ["stack", "React · TypeScript · Spring Boot"],
+  ["experience", "~1.5 yrs @ emgage.work"],
+  ["studying", "system design, backend performance"],
   ["writing", "occasional notes at /log"],
-  ["hobbies", "cycling, film photography, chess"],
+  ["hobbies", "reading, chess, exploring new tech"],
 ];
 
 export default function About() {
@@ -18,24 +18,26 @@ export default function About() {
         {/* narrative */}
         <div className="col-span-12 lg:col-span-7 space-y-5 text-[0.95rem] md:text-base leading-relaxed">
           <p className="text-fg">
-            <span className="text-accent">//</span> Lorem ipsum. I'm a developer
-            who cares deeply about the small details — the weight of a border,
-            the ease of a transition, the rhythm of a sentence in a UI. I build
-            software the way a typographer sets a page: patient, considered,
-            and always in service of the reader.
+            <span className="text-accent">//</span> I'm a software engineer
+            with about <span className="text-fg">1.5 years</span> of
+            professional experience building scalable web applications
+            end-to-end. My day-to-day is <span className="text-fg">React</span>,{" "}
+            <span className="text-fg">TypeScript</span> and{" "}
+            <span className="text-fg">Spring Boot</span> — shipping
+            production-grade features across both the frontend and backend.
           </p>
           <p className="text-muted">
-            Over the last few years I've shipped e-commerce platforms,
-            developer tools, and quiet little utilities that just work. I
-            prefer boring technology, aggressive iteration, and honest error
-            messages. When I'm not shipping, I'm reading changelogs or fixing
-            my keyboard.
+            I care about clean, maintainable code, thoughtful UI, and APIs
+            that are pleasant to work with. I've spent that time designing
+            responsive interfaces, writing RESTful services, integrating
+            databases, debugging real production issues, and collaborating
+            with cross-functional teams in an agile environment.
           </p>
           <p className="text-muted">
-            This site itself is a placeholder — swap the copy for your own and
-            keep the aesthetic. It's built with React and Tailwind, and set in{" "}
-            <span className="text-fg">IBM Plex Mono</span> and{" "}
-            <span className="text-fg">Space Mono</span>.
+            I'm passionate about delivering high-quality software,
+            continuously picking up new tools, and solving real-world
+            engineering problems with an emphasis on performance,
+            reliability and user experience.
           </p>
 
           <div className="pt-4">
@@ -44,13 +46,14 @@ export default function About() {
             </div>
             <ul className="text-sm md:text-base space-y-2">
               <li className="prompt">
-                exploring server-driven UI patterns in React
+                shipping full-stack features at{" "}
+                <span className="text-accent">emgage.work</span>
               </li>
               <li className="prompt">
-                writing a mono-themed note-taking app
+                deepening my Spring Boot & system design chops
               </li>
               <li className="prompt">
-                open to freelance & full-time engagements
+                open to interesting side-projects & collaborations
               </li>
             </ul>
           </div>
