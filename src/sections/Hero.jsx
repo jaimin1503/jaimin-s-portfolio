@@ -65,7 +65,7 @@ export default function Hero() {
         {/* meta strip */}
         <div className="flex justify-between text-[0.7rem] md:text-xs text-muted uppercase tracking-widest dashed-b pb-3">
           <span>~/portfolio/index</span>
-          <span className="hidden sm:inline">status: available for work</span>
+          <span className="hidden sm:inline">status: Busy in building Something..</span>
           <span>v3.0.0</span>
         </div>
 
