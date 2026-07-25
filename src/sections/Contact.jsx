@@ -1,30 +1,38 @@
-import { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import Section from "../components/Section";
 
 const socials = [
-  { key: "github",   handle: "@jaimin1503",           href: "#" },
-  { key: "linkedin", handle: "in/jaimin-viramgama",   href: "#" },
-  { key: "twitter",  handle: "@jaimin_dev",           href: "#" },
-  { key: "email",    handle: "hello@jaimin.dev",      href: "mailto:hello@jaimin.dev" },
+  {
+    key: "github",
+    handle: "@jaimin1503",
+    href: "https://github.com/jaimin1503",
+  },
+  {
+    key: "linkedin",
+    handle: "in/jaimin-viramgama",
+    href: "https://www.linkedin.com/in/jaimin-viramgama-487485233/",
+  },
+  {
+    key: "instagram",
+    handle: "@jaimin_15.3",
+    href: "https://www.instagram.com/jaimin_15.3/",
+  },
+  {
+    key: "email",
+    handle: "jaiminviramgama152@gmail.com",
+    href: "mailto:jaiminviramgama152@gmail.com",
+  },
+  {
+    key: "calendly",
+    handle: "book a 30-min call",
+    href: "https://calendly.com/jaiminv153/30min",
+  },
 ];
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [state, setState] = useState("idle"); // idle | sending | sent
-
-  const on = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
-
-  const submit = (e) => {
-    e.preventDefault();
-    if (!form.name || !form.email || !form.message) return;
-    setState("sending");
-    // placeholder — hook up to your form backend of choice
-    setTimeout(() => {
-      setState("sent");
-      setForm({ name: "", email: "", message: "" });
-      setTimeout(() => setState("idle"), 4000);
-    }, 900);
-  };
+  const [state, handleSubmit] = useForm("mayrnnrj");
+  const sent = state.succeeded;
+  const sending = state.submitting;
 
   return (
     <Section
@@ -58,7 +66,9 @@ export default function Contact() {
                 </span>
                 <a
                   href={s.href}
-                  className="link-mono text-fg"
+                  target={s.href.startsWith("mailto") ? undefined : "_blank"}
+                  rel="noreferrer noopener"
+                  className="link-mono text-fg break-all"
                   data-testid={`contact-${s.key}`}
                 >
                   {s.handle} ↗
@@ -71,78 +81,100 @@ export default function Contact() {
         {/* right: form */}
         <div className="col-span-12 lg:col-span-7">
           <form
-            onSubmit={submit}
+            onSubmit={handleSubmit}
             className="card-mono p-6 md:p-8"
             data-testid="contact-form"
           >
             <div className="text-[0.7rem] uppercase tracking-widest text-muted mb-5 dashed-b pb-3 flex justify-between">
               <span>./compose_message.sh</span>
-              <span className={state === "sent" ? "text-accent" : ""}>
-                {state === "sent" ? "● sent" : state === "sending" ? "◐ sending..." : "○ idle"}
+              <span className={sent ? "text-accent" : ""}>
+                {sent ? "● sent" : sending ? "◐ sending..." : "○ idle"}
               </span>
             </div>
 
-            <label className="block mb-5">
-              <span className="text-muted text-xs uppercase tracking-widest">
-                ~ name
-              </span>
-              <input
-                required
-                value={form.name}
-                onChange={on("name")}
-                placeholder="ada lovelace"
-                data-testid="contact-name-input"
-                className="mt-1 w-full bg-transparent border-b border-line focus:border-accent outline-none py-2 text-fg placeholder:text-muted/60 font-mono"
-              />
-            </label>
+            {sent ? (
+              <div className="py-8 text-center">
+                <div className="display text-2xl md:text-3xl text-fg">
+                  ✓ message sent
+                </div>
+                <p className="mt-3 text-sm text-muted">
+                  Thanks — I'll get back to you shortly.
+                </p>
+              </div>
+            ) : (
+              <>
+                <label className="block mb-5">
+                  <span className="text-muted text-xs uppercase tracking-widest">
+                    ~ name
+                  </span>
+                  <input
+                    required
+                    id="name"
+                    type="text"
+                    name="name"
+                    placeholder="ada lovelace"
+                    data-testid="contact-name-input"
+                    className="mt-1 w-full bg-transparent border-b border-line focus:border-accent outline-none py-2 text-fg placeholder:text-muted/60 font-mono"
+                  />
+                </label>
 
-            <label className="block mb-5">
-              <span className="text-muted text-xs uppercase tracking-widest">
-                ~ email
-              </span>
-              <input
-                required
-                type="email"
-                value={form.email}
-                onChange={on("email")}
-                placeholder="ada@analytical.engine"
-                data-testid="contact-email-input"
-                className="mt-1 w-full bg-transparent border-b border-line focus:border-accent outline-none py-2 text-fg placeholder:text-muted/60 font-mono"
-              />
-            </label>
+                <label className="block mb-5">
+                  <span className="text-muted text-xs uppercase tracking-widest">
+                    ~ email
+                  </span>
+                  <input
+                    required
+                    id="email"
+                    type="email"
+                    name="email"
+                    placeholder="ada@analytical.engine"
+                    data-testid="contact-email-input"
+                    className="mt-1 w-full bg-transparent border-b border-line focus:border-accent outline-none py-2 text-fg placeholder:text-muted/60 font-mono"
+                  />
+                  <ValidationError
+                    prefix="Email"
+                    field="email"
+                    errors={state.errors}
+                    className="text-xs text-accent mt-1 block"
+                  />
+                </label>
 
-            <label className="block mb-6">
-              <span className="text-muted text-xs uppercase tracking-widest">
-                ~ message
-              </span>
-              <textarea
-                required
-                rows={5}
-                value={form.message}
-                onChange={on("message")}
-                placeholder="hey jaimin — let's build something interesting..."
-                data-testid="contact-message-input"
-                className="mt-1 w-full bg-transparent border-b border-line focus:border-accent outline-none py-2 text-fg placeholder:text-muted/60 font-mono resize-none"
-              />
-            </label>
+                <label className="block mb-6">
+                  <span className="text-muted text-xs uppercase tracking-widest">
+                    ~ message
+                  </span>
+                  <textarea
+                    required
+                    id="message"
+                    name="message"
+                    rows={5}
+                    defaultValue="Hello Jaimin! 👋"
+                    data-testid="contact-message-input"
+                    className="mt-1 w-full bg-transparent border-b border-line focus:border-accent outline-none py-2 text-fg placeholder:text-muted/60 font-mono resize-none"
+                  />
+                  <ValidationError
+                    prefix="Message"
+                    field="message"
+                    errors={state.errors}
+                    className="text-xs text-accent mt-1 block"
+                  />
+                </label>
 
-            <div className="flex items-center justify-between flex-wrap gap-3">
-              <span className="text-[0.7rem] text-muted">
-                encrypted in transit · never shared
-              </span>
-              <button
-                type="submit"
-                disabled={state !== "idle"}
-                data-testid="contact-submit-btn"
-                className="btn-mono solid disabled:opacity-60"
-              >
-                {state === "sending"
-                  ? "[ sending… ]"
-                  : state === "sent"
-                  ? "[ ✓ sent ]"
-                  : "[ send message → ]"}
-              </button>
-            </div>
+                <div className="flex items-center justify-between flex-wrap gap-3">
+                  <span className="text-[0.7rem] text-muted">
+                    encrypted in transit · never shared
+                  </span>
+                  <button
+                    type="submit"
+                    disabled={sending}
+                    data-testid="contact-submit-btn"
+                    className="btn-mono solid disabled:opacity-60"
+                  >
+                    {sending ? "[ sending… ]" : "[ send message → ]"}
+                  </button>
+                </div>
+              </>
+            )}
           </form>
         </div>
       </div>

@@ -3,11 +3,11 @@ import Section from "../components/Section";
 const groups = [
   {
     key: "languages",
-    items: ["typescript", "javascript", "python", "html", "css", "sql", "bash"],
+    items: ["typescript", "javascript", "java", "python", "html", "css", "sql", "bash"],
   },
   {
     key: "frameworks",
-    items: ["react", "next", "node", "express", "tailwind", "vite", "fastapi"],
+    items: ["react", "next", "node", "express", "spring boot", "tailwind", "vite", "fastapi"],
   },
   {
     key: "data & infra",

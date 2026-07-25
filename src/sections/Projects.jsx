@@ -8,8 +8,8 @@ const projects = [
     year: "2024",
     desc: "Instagram-style micro-social platform with posts, likes, comments and realtime feed.",
     stack: ["react", "redux", "node", "express", "mongodb", "tailwind"],
-    code: "#",
-    live: "#",
+    code: "https://github.com/jaimin1503/rj-insta",
+    live: "https://friends-flock.vercel.app",
     status: "shipped",
   },
   {
@@ -19,8 +19,8 @@ const projects = [
     year: "2024",
     desc: "A two-sided platform where freelancers and clients post jobs, apply, and coordinate work.",
     stack: ["react", "node", "express", "mongodb", "tailwind"],
-    code: "#",
-    live: "#",
+    code: "https://github.com/jaimin1503/do-remote",
+    live: "https://do-remote.vercel.app",
     status: "shipped",
   },
   {
@@ -30,8 +30,8 @@ const projects = [
     year: "2024",
     desc: "Type-driven résumé builder with multiple templates and a live preview pane.",
     stack: ["react", "redux", "node", "express"],
-    code: "#",
-    live: "#",
+    code: "https://github.com/jaimin1503/zidio-resume-builder",
+    live: "https://pro-resume-hub.vercel.app",
     status: "shipped",
   },
   {
@@ -41,8 +41,8 @@ const projects = [
     year: "2023",
     desc: "Role-based profile app supporting clients and freelancers, built in a 24-hour hackathon.",
     stack: ["react", "node", "express"],
-    code: "#",
-    live: "#",
+    code: "https://github.com/jaimin1503/odoo-hackathon",
+    live: "https://task-me-bay.vercel.app/log-in",
     status: "archived",
   },
 ];
@@ -91,10 +91,10 @@ export default function Projects() {
                 ))}
               </div>
               <div className="mt-4 flex gap-4 md:hidden">
-                <a href={p.code} className="link-mono text-xs uppercase tracking-widest">
+                <a href={p.code} target="_blank" rel="noreferrer noopener" className="link-mono text-xs uppercase tracking-widest">
                   code ↗
                 </a>
-                <a href={p.live} className="link-mono text-xs uppercase tracking-widest">
+                <a href={p.live} target="_blank" rel="noreferrer noopener" className="link-mono text-xs uppercase tracking-widest">
                   live ↗
                 </a>
               </div>
@@ -105,6 +105,8 @@ export default function Projects() {
               <span className="hidden md:inline-flex gap-4 mt-3 pt-3 dashed-t w-full">
                 <a
                   href={p.code}
+                  target="_blank"
+                  rel="noreferrer noopener"
                   className="link-mono text-[0.72rem] uppercase tracking-widest"
                   data-testid={`project-code-${p.id}`}
                 >
@@ -112,6 +114,8 @@ export default function Projects() {
                 </a>
                 <a
                   href={p.live}
+                  target="_blank"
+                  rel="noreferrer noopener"
                   className="link-mono text-[0.72rem] uppercase tracking-widest"
                   data-testid={`project-live-${p.id}`}
                 >

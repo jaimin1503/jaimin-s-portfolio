@@ -111,14 +111,18 @@ export default function Hero() {
                 [ view work → ]
               </a>
               <a
-                href="#contact"
+                href="https://calendly.com/jaiminv153/30min"
+                target="_blank"
+                rel="noreferrer noopener"
                 className="btn-mono"
                 data-testid="hero-cta-contact"
               >
-                [ get in touch ]
+                [ schedule a meet ]
               </a>
               <a
-                href="#"
+                href="https://drive.google.com/file/d/1b3Im91wJBcdNNlqRqA7B3QAzAv3j2q_1/view?usp=sharing"
+                target="_blank"
+                rel="noreferrer noopener"
                 className="btn-mono"
                 data-testid="hero-cta-resume"
               >
