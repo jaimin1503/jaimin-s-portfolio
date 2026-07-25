@@ -11,6 +11,21 @@ const projects = [
     code: "https://github.com/jaimin1503/agent-peek",
     live: "https://github.com/jaimin1503/agent-peek/releases/latest",
     status: "shipped",
+    featured: true,
+    previews: [
+      {
+        src: "https://customer-assets-eiarnc6j.emergentagent.net/job_mono-portfolio-5/artifacts/yu2kk3ox_Screenshot%202026-07-26%20at%2012.40.44%E2%80%AFAM.png",
+        caption: "expanded · two live sessions with activity timeline",
+      },
+      {
+        src: "https://customer-assets-eiarnc6j.emergentagent.net/job_mono-portfolio-5/artifacts/j35ofm30_Screenshot%202026-07-26%20at%2012.40.29%E2%80%AFAM.png",
+        caption: "attention state · claude needs your permission",
+      },
+      {
+        src: "https://customer-assets-eiarnc6j.emergentagent.net/job_mono-portfolio-5/artifacts/3lgilwz3_Screenshot%202026-07-26%20at%2012.40.58%E2%80%AFAM.png",
+        caption: "idle pill · collapses to 40px when quiet",
+      },
+    ],
   },
   {
     id: "02",
@@ -59,6 +74,9 @@ const projects = [
 ];
 
 export default function Projects() {
+  const featured = projects.find((p) => p.featured);
+  const rest = projects.filter((p) => !p.featured);
+
   return (
     <Section
       id="projects"
@@ -66,6 +84,9 @@ export default function Projects() {
       title="work[]"
       meta={`ls -la ./projects · ${projects.length} entries`}
     >
+      {/* featured card */}
+      {featured && <FeaturedProject p={featured} />}
+
       {/* table header */}
       <div className="hidden md:grid grid-cols-[3rem_1fr_1.2fr_6rem_5rem] gap-4 pb-3 dashed-b text-[0.7rem] uppercase tracking-widest text-muted">
         <span>id</span>
@@ -76,7 +97,7 @@ export default function Projects() {
       </div>
 
       <ul className="divide-y divide-line/60">
-        {projects.map((p) => (
+        {rest.map((p) => (
           <li
             key={p.id}
             data-testid={`project-row-${p.id}`}
@@ -152,5 +173,128 @@ export default function Projects() {
         end of list · <span className="text-accent">more soon</span>
       </div>
     </Section>
+  );
+}
+
+function FeaturedProject({ p }) {
+  return (
+    <article
+      data-testid={`project-featured-${p.id}`}
+      className="card-mono p-5 md:p-7 mb-10 md:mb-14"
+    >
+      {/* header strip */}
+      <div className="flex items-center justify-between text-[0.7rem] uppercase tracking-widest text-muted mb-5 dashed-b pb-3 flex-wrap gap-2">
+        <span>
+          <span className="text-accent">★</span> featured · {p.id}/
+          {p.year}
+        </span>
+        <span className="text-accent">● {p.status}</span>
+      </div>
+
+      <div className="grid grid-cols-12 gap-6 md:gap-8">
+        {/* meta */}
+        <div className="col-span-12 lg:col-span-5">
+          <h3 className="display text-3xl md:text-4xl lg:text-5xl text-fg">
+            {p.title}
+          </h3>
+          <div className="text-[0.72rem] uppercase tracking-widest text-muted mt-2">
+            {p.kind}
+          </div>
+
+          <p className="mt-5 text-sm md:text-[0.92rem] text-muted leading-relaxed">
+            {p.desc}
+          </p>
+
+          <div className="mt-5 flex flex-wrap gap-1.5">
+            {p.stack.map((s) => (
+              <span
+                key={s}
+                className="text-[0.68rem] px-1.5 py-0.5 border border-line text-muted"
+              >
+                {s}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-6 flex gap-3 flex-wrap">
+            <a
+              href={p.code}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="btn-mono solid"
+              data-testid={`project-code-${p.id}`}
+            >
+              [ code ↗ ]
+            </a>
+            <a
+              href={p.live}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="btn-mono"
+              data-testid={`project-live-${p.id}`}
+            >
+              [ download ↓ ]
+            </a>
+          </div>
+        </div>
+
+        {/* preview gallery */}
+        <div className="col-span-12 lg:col-span-7">
+          <div className="text-[0.7rem] uppercase tracking-widest text-muted mb-3 flex justify-between">
+            <span>./previews</span>
+            <span>{p.previews.length} shots</span>
+          </div>
+
+          <div className="grid grid-cols-6 gap-3">
+            {/* big shot */}
+            <a
+              href={p.previews[0].src}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="col-span-6 sm:col-span-4 group relative border border-line hover:border-accent transition-colors overflow-hidden bg-[#111]"
+              data-testid={`project-preview-${p.id}-0`}
+            >
+              <img
+                src={p.previews[0].src}
+                alt={p.previews[0].caption}
+                loading="lazy"
+                className="w-full h-full object-contain"
+              />
+              <span className="absolute bottom-0 left-0 right-0 px-3 py-2 text-[0.65rem] tracking-widest uppercase text-fg bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity">
+                ↳ {p.previews[0].caption}
+              </span>
+            </a>
+
+            {/* two stacked shots */}
+            <div className="col-span-6 sm:col-span-2 flex flex-col gap-3">
+              {p.previews.slice(1).map((img, i) => (
+                <a
+                  key={img.src}
+                  href={img.src}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="group relative border border-line hover:border-accent transition-colors overflow-hidden bg-[#111] flex-1 min-h-[100px]"
+                  data-testid={`project-preview-${p.id}-${i + 1}`}
+                >
+                  <img
+                    src={img.src}
+                    alt={img.caption}
+                    loading="lazy"
+                    className="w-full h-full object-contain"
+                  />
+                  <span className="absolute bottom-0 left-0 right-0 px-2 py-1.5 text-[0.6rem] tracking-widest uppercase text-fg bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity">
+                    ↳ {img.caption}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-3 text-[0.65rem] uppercase tracking-widest text-muted/70">
+            click any shot to open full-size
+          </div>
+        </div>
+      </div>
+    </article>
   );
 }
