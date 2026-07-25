@@ -29,3 +29,6 @@ credentials.json
 *.pem
 *.key
 .credentials
+
+# local pod-only symlink for supervisor
+/frontend

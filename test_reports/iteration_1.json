@@ -1,0 +1,48 @@
+{
+  "summary": "Frontend-only regression sweep for Jaimin's Vite/React portfolio after the GH-Pages deploy fix. Verified live preview URL loads (200), Nav (desktop + mobile), Hero, Projects featured card + previews + rows, Experience, Skills, Contact links + form, theme toggle persistence, and smooth-scroll. Verified prod build (`BASE_PATH=/jaimin-s-portfolio/ yarn build`) bakes correct base path into dist/index.html, /.nojekyll is present, and `frontend` is not tracked by git.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Minor content mismatch: Experience section shows 11 bullets under 'software engineer @ emgage', not 10 as stated in the review spec. Not a bug, but confirm the intended count.",
+    "Non-blocking console warnings from react-router v6 future flags (v7_startTransition, v7_relativeSplatPath) appear twice on load. Consider enabling the future flags on the Router config to silence them, or drop react-router if it's unused in this SPA."
+  ],
+  "critical_code_review_comments": [
+    "vite.config.js `base` defaults to '/jaimin-s-portfolio/' for any build even without BASE_PATH — this is fine for the GH Pages target, but if the same repo is ever deployed elsewhere (Vercel/Netlify), assets will 404. Consider defaulting to '/' and only setting the repo path in the workflow env.",
+    "Projects.jsx: preview images use `loading=\"lazy\"`, which means the browser may skip loading if the featured card is offscreen. Fine for real users, but tests need to scroll it into view first (handled in the test).",
+    "Nav.jsx label 'stack' maps to section id 'skills' and label 'work' maps to 'projects'. The review request's testid list (nav-link-index/work/stack) uses labels, but the actual data-testids use ids (nav-link-home/projects/skills). All 6 links exist and function correctly — just a spec/impl naming asymmetry that could confuse future testers."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A", "frontend": "100%"},
+  "seed_data_creation": "None",
+  "should_call_test_agent_after_fix": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Nav uses internal ids for data-testids: nav-link-{home,about,projects,experience,skills,contact} and nav-mobile-link-{...}. Skills section id is '#skills', Projects id is '#projects'. Featured project preview data-testids are on <a> anchors — read naturalWidth via `[data-testid=...] img`. Contact form should NOT be submitted (Formspree). External links (github/calendly/drive/linkedin/instagram) should only be verified by href, not clicked. Prod build command: `BASE_PATH=/jaimin-s-portfolio/ yarn build` from /app.",
+  "rca_of_the_issue": "N/A — no failures. Deployment fix verified: dist/index.html references '/jaimin-s-portfolio/assets/...' (2 occurrences confirmed), /app/.nojekyll exists (empty file), and `git ls-files` no longer lists 'frontend' (symlink still on disk for supervisor, but untracked). Local dev server continues to serve the SPA correctly at the preview URL with all sections, theme persistence, mobile nav, and images loading successfully.",
+  "verified_deployment_fix": {
+    "dist_index_html_base_path_hits": 2,
+    "sample_paths": ["/jaimin-s-portfolio/assets/index-B9P4yVDH.js", "/jaimin-s-portfolio/assets/index-bqhwaPNg.css"],
+    "nojekyll_present": true,
+    "frontend_tracked_in_git": false
+  },
+  "verified_functional_checks": {
+    "http_status": 200,
+    "nav_links_desktop": 6,
+    "nav_links_mobile": 6,
+    "mobile_menu_opens_and_closes_on_link_click": true,
+    "hero_ctas": {"work": "#projects", "contact_calendly": "https://calendly.com/jaiminv153/30min (target=_blank)", "resume_drive": "https://drive.google.com/file/d/1b3Im91wJBcdNNlqRqA7B3QAzAv3j2q_1/view?usp=sharing (target=_blank)"},
+    "featured_project_previews_loaded": [{"i":0,"nw":744,"nh":738},{"i":1,"nw":740,"nh":486},{"i":2,"nw":384,"nh":130}],
+    "project_rows_02_to_05": 4,
+    "experience_bullets": 11,
+    "skills_groups_and_keywords_present": true,
+    "contact_links_correct": true,
+    "contact_form_inputs_present_and_editable": true,
+    "theme_toggle_switches_and_persists_in_localStorage_jv-theme": true,
+    "smooth_scroll_click_works": true,
+    "console_errors": 0
+  }
+}
