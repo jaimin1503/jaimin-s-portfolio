@@ -11,7 +11,7 @@ const groups = [
   },
   {
     key: "data & infra",
-    items: ["postgres", "mongodb", "redis", "docker", "nginx", "vercel", "aws"],
+    items: ["postgres", "flyway", "mongodb", "redis", "docker", "nginx", "vercel", "aws"],
   },
   {
     key: "tools",

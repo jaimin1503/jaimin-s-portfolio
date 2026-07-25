@@ -2,16 +2,23 @@ import Section from "../components/Section";
 
 const roles = [
   {
-    org: "emgage.work",
+    org: "emgage",
     role: "software engineer",
     period: "2024 — present",
     location: "full-time · ~1.5 yrs",
+    focus:
+      "HRMS platform · Payroll, Compliance, Offer Letter, Job Role & Employee Management",
     bullets: [
-      "Building and maintaining production-grade features across the frontend and backend of a scalable web platform.",
-      "Working day-to-day with React, TypeScript and Spring Boot — from responsive UI components down to RESTful APIs and database layers.",
-      "Owning features end-to-end: design → implementation → code review → release, in an agile, cross-functional team.",
-      "Debugging complex issues in production, writing clean and maintainable code, and focusing on performance, reliability and UX.",
-      "Continuously learning and adopting new tools/patterns to raise the bar for both developer experience and product quality.",
+      "Developed and enhanced Payroll, Compliance, Offer Letter, Job Role and Employee Management modules within the HRMS platform.",
+      "Built and maintained frontend features using React and TypeScript, ensuring responsive and user-friendly interfaces.",
+      "Developed backend APIs and business logic using Spring Boot and Java for HR and payroll workflows.",
+      "Created and optimized PostgreSQL queries, views and stored procedures for payroll processing and employee data management.",
+      "Implemented and maintained Flyway database migrations for schema changes and new feature deployments.",
+      "Worked on dynamic Letter Tag generation and document templating for offer letters and HR documents.",
+      "Investigated and resolved production issues, database inconsistencies and application bugs across frontend and backend systems.",
+      "Integrated REST APIs and improved data flow between the React frontend and Spring Boot backend.",
+      "Participated in code reviews, feature planning, testing and deployment as part of an Agile development team.",
+      "Improved application performance and maintainability by refactoring legacy code and optimizing SQL queries.",
     ],
   },
 ];
@@ -53,6 +60,11 @@ export default function Experience() {
                     {r.org}
                   </span>
                 </div>
+                {r.focus && (
+                  <div className="mt-2 text-[0.72rem] md:text-xs uppercase tracking-widest text-muted">
+                    ↳ {r.focus}
+                  </div>
+                )}
                 <ul className="mt-4 space-y-2 text-sm md:text-[0.92rem] text-muted leading-relaxed">
                   {r.bullets.map((b, k) => (
                     <li key={k} className="prompt">
