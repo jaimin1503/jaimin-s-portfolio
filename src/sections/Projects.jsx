@@ -29,6 +29,29 @@ const projects = [
   },
   {
     id: "02",
+    title: "paisa",
+    kind: "android app · personal finance",
+    year: "2026",
+    desc: "Private expense tracker for UPI. Finds your UPI payments, tells you what's safe to spend today, and keeps all data on your phone.",
+    stack: ["android", "on-device"],
+    live: "https://paisa.jaiminv.in",
+    store: "https://play.google.com/store/apps/details?id=com.twopixellabs.paisa",
+    status: "shipped",
+  },
+  {
+    id: "03",
+    title: "raven",
+    kind: "android app · camera",
+    year: "2026",
+    desc: "RAW video engine. Records true RAW video and DNG photos straight from your Android phone's camera sensor.",
+    stack: ["android", "camera2"],
+    live: "https://ra-ven.jaiminv.in",
+    store: "https://play.google.com/store/apps/details?id=com.twopixellabs.raven",
+    status: "shipped",
+  },
+  /* hidden for now — uncomment to restore
+  {
+    id: "04",
     title: "friends-flock",
     kind: "social · full-stack",
     year: "2024",
@@ -39,7 +62,7 @@ const projects = [
     status: "shipped",
   },
   {
-    id: "03",
+    id: "05",
     title: "do-remote",
     kind: "marketplace · saas",
     year: "2024",
@@ -50,7 +73,7 @@ const projects = [
     status: "shipped",
   },
   {
-    id: "04",
+    id: "06",
     title: "resume-hub",
     kind: "tool · generator",
     year: "2024",
@@ -61,7 +84,7 @@ const projects = [
     status: "shipped",
   },
   {
-    id: "05",
+    id: "07",
     title: "open-to-work",
     kind: "hackathon · fullstack",
     year: "2023",
@@ -71,6 +94,7 @@ const projects = [
     live: "https://task-me-bay.vercel.app/log-in",
     status: "archived",
   },
+  */
 ];
 
 export default function Projects() {
@@ -123,36 +147,29 @@ export default function Projects() {
                 ))}
               </div>
               <div className="mt-4 flex gap-4 md:hidden">
-                <a href={p.code} target="_blank" rel="noreferrer noopener" className="link-mono text-xs uppercase tracking-widest">
-                  code ↗
-                </a>
-                <a href={p.live} target="_blank" rel="noreferrer noopener" className="link-mono text-xs uppercase tracking-widest">
-                  live ↗
-                </a>
+                {links(p).map(([key, label, href]) => (
+                  <a key={key} href={href} target="_blank" rel="noreferrer noopener" className="link-mono text-xs uppercase tracking-widest">
+                    {label} ↗
+                  </a>
+                ))}
               </div>
             </div>
 
             <p className="text-sm md:text-[0.92rem] text-muted leading-relaxed md:pt-1">
               {p.desc}
               <span className="hidden md:inline-flex gap-4 mt-3 pt-3 dashed-t w-full">
-                <a
-                  href={p.code}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="link-mono text-[0.72rem] uppercase tracking-widest"
-                  data-testid={`project-code-${p.id}`}
-                >
-                  code ↗
-                </a>
-                <a
-                  href={p.live}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="link-mono text-[0.72rem] uppercase tracking-widest"
-                  data-testid={`project-live-${p.id}`}
-                >
-                  live ↗
-                </a>
+                {links(p).map(([key, label, href]) => (
+                  <a
+                    key={key}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="link-mono text-[0.72rem] uppercase tracking-widest"
+                    data-testid={`project-${key}-${p.id}`}
+                  >
+                    {label} ↗
+                  </a>
+                ))}
               </span>
             </p>
 
@@ -174,6 +191,15 @@ export default function Projects() {
       </div>
     </Section>
   );
+}
+
+// Row links are optional: closed-source apps have no `code`, store apps add `store`.
+function links(p) {
+  return [
+    ["code", "code", p.code],
+    ["live", "live", p.live],
+    ["store", "play store", p.store],
+  ].filter(([, , href]) => href);
 }
 
 function FeaturedProject({ p }) {
